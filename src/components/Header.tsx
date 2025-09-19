@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-
 export default function Header() {
     return (
         <div className='flex flex-row justify-between absolute w-full z-50'>
@@ -13,7 +12,7 @@ export default function Header() {
                     width={437}
                     height={324}
                     priority={true}
-                    className='w-[40px] mx-7 xl:mx-9 my-7'
+                    className='w-8 sm:w-10 mx-7 xl:mx-9 my-7'
                 />
             </div>
 
