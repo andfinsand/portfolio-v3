@@ -1,6 +1,6 @@
 export default function Center() {
     return (
-        <div>
+        <div className="h-screen">
             Center
         </div>
     );

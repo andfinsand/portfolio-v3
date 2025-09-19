@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   description: "Andrew Finsand's Full-Stack Developer and UI/UX Designer portfolio. Specializing in Next.js, React, Python, and AI integration. Building scalable web applications, e-commerce platforms, and creative digital experiences.",
   keywords: "Andrew Finsand, UI/UX Designer, Full-Stack Developer, Next.js, React, Python, JavaScript, AI integration, OpenAI API, Supabase, Docker, CI/CD, Tailwind CSS, MongoDB, Flask, DevOps, e-commerce development, web development, portfolio",
   authors: [{ name: "Andrew Finsand" }],
-  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
