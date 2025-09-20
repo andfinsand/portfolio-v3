@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preload background images */}
-        <link rel="preload" href="/background-hero.webp" as="image" />
+        <link rel="preload" fetchPriority="high" href="/background-hero.webp" as="image" />
         {/* <link rel="preload" href="/foreground.webp" as="image" /> */}
       </head>
       <body

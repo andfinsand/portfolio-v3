@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Header from '@/components/Header';
 import Hero from "@/components/Hero";
+import Divider from "@/components/Divider";
 import Center from "@/components/Center";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       {/* <div id='background'></div> */}
       < Header />
       < Hero />
+      < Divider />
       < Center />
     </main>
 

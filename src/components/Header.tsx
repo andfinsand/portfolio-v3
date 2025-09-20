@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Header() {
     return (
-        <div className='flex flex-row justify-between absolute w-full z-50'>
+        <div className='header-animation flex flex-row justify-between absolute w-full z-50'>
 
             {/* Logo */}
             <div>

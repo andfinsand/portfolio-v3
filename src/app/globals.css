@@ -29,16 +29,31 @@ body {
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
-/* Backgrounds */
-/* #background {
-  z-index: -1;
-  background-image: url('/background-hero.webp');
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background-size: cover;
-  background-position: center;
-} */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    /* Start 20px higher */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* End at natural position */
+  }
+}
 
 #background {
   z-index: -1;
@@ -50,4 +65,42 @@ body {
   position: absolute;
   background-size: cover;
   background-position: center;
+  /* For animation on load */
+  opacity: 0;
+  animation: heroFadeIn 2.5s ease-out 500ms forwards;
+}
+
+.bg-fade {
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 1));
+}
+
+
+
+
+/* Hero content animation on load */
+.hero-h1,
+.hero-h2,
+.hero-button {
+  opacity: 0;
+}
+
+/* H1 Animation */
+.hero-h1 {
+  animation: heroFadeIn 1.5s ease-out 700ms forwards;
+}
+
+/* H2 Animation */
+.hero-h2 {
+  animation: heroFadeIn 1.5s ease-out 900ms forwards;
+}
+
+/* Button Animation */
+.hero-button {
+  animation: heroFadeIn 1.5s ease-out 1100ms forwards;
+}
+
+/* Header animation on load */
+.header-animation {
+  opacity: 0;
+  animation: headerFadeInDown 1.5s ease-out 600ms forwards;
 }

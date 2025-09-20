@@ -1,38 +1,71 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import 'aos/dist/aos.css';
 
 export default function Hero() {
+    const parallaxRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const parallaxSpeed = 0.4;
+        const fadeOutDistance = 400;
+
+        const handleScroll = () => {
+            const element = parallaxRef.current;
+            if (element) {
+                const scrollY = window.scrollY;
+                // Parallax animation
+                const newYOffset = scrollY * parallaxSpeed;
+                // Opacity
+                const newOpacity = Math.max(0, 1 - scrollY / fadeOutDistance);
+
+                window.requestAnimationFrame(() => {
+                    element.style.setProperty('--scroll-offset', `${newYOffset}px`);
+                    element.style.opacity = newOpacity.toString();
+                });
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
-            <div
-                className='relative flex justify-center items-center h-screen w-full overflow-hidden [--offset:-7vh] sm:[--offset:-8vh] xl:[--offset:-9.5vh] 2xl:[--offset:-10vh] 3xl:[--offset:-11vh]'
-            // style={{ '--offset': '-8vh' } as any}
-            >
+            <div className='relative flex justify-center items-center h-screen w-full overflow-hidden [--offset:-6.5vh] sm:[--offset:-7.5vh] xl:[--offset:-8.5vh] 2xl:[--offset:-9.5vh] 3xl:[--offset:-10.5vh]'>
 
                 {/* Background image */}
                 <div id='background'></div>
 
                 {/* Title */}
                 <div
-                    className='lax-title relative text-[#E7E7E7]'
-                    style={{ transform: 'translateY(var(--offset))' }}
+                    ref={parallaxRef}
+                    className='parallax-container relative text-[#E7E7E7]'
+                    style={{
+                        transform: 'translateY(calc(var(--offset) + var(--scroll-offset, 0px)))',
+                        willChange: 'transform, opacity' // performance optimization hint for the browser
+                    }}
                 >
                     <h1
                         // data-aos='fade-in'
                         // data-aos-delay='1200'
-                        className='text-center drop-shadow-[0_0_2px_rgba(231,231,231,.5)] text-4xl sm:text-5xl xl:text-6xl mb-2 xl:mb-4'
+                        className='hero-h1 text-center drop-shadow-[0_0_2px_rgba(231,231,231,.5)] text-4xl sm:text-5xl xl:text-6xl mb-2 xl:mb-4'
                     >
                         ANDREW FINSAND
                     </h1>
                     <h2
                         // data-aos='fade-in'
                         // data-aos-delay='1200'
-                        className='text-center font-extralight text-xl sm:text-2xl xl:text-3xl mb-8 xl:mb-10'
+                        className='hero-h2 text-center font-extralight text-xl sm:text-2xl xl:text-3xl mb-8 xl:mb-10'
                     >
                         Software Developer
                     </h2>
 
                     {/* Resume */}
-                    <div className='flex justify-center w-full'>
+                    <div className='hero-button flex justify-center w-full'>
                         <a
                             href='resume.pdf'
                             rel='noopener noreferrer'
