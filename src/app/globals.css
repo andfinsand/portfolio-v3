@@ -1,19 +1,24 @@
 @import "tailwindcss";
 
+
+/* ===== THEME CONFIGURATION ===== */
+/* Add custom tailwind styling here */
 @theme {
   --breakpoint-3xl: 120rem;
-}
-
-:root {
-  --background: #0A0A0A;
-  /* --foreground: #171717; */
-  --foreground: #C9C9C9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
+}
+
+
+/* ===== CSS CUSTOM PROPERTIES / VARIABLES ===== */
+:root {
+  --background: #0A0A0A;
+  /* --foreground: #171717; */
+  --foreground: #C9C9C9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,13 +28,17 @@
   }
 }
 
+
+/* ===== BASE STYLES ===== */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
-@keyframes heroFadeIn {
+
+/* ===== ANIMATIONS / KEYFRAMES ===== */
+@keyframes heroBgFadeIn {
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -38,6 +47,18 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes heroTextFadeIn {
+  from {
+    opacity: 0;
+    /* transform: translateY(-12px); */
+  }
+
+  to {
+    opacity: 1;
+    /* transform: translateY(0); */
   }
 }
 
@@ -55,6 +76,32 @@ body {
   }
 }
 
+@keyframes backgroundPulse {
+
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+
+  50% {
+    filter: brightness(1.15) saturate(1.2);
+  }
+}
+
+@keyframes textGlowPulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(231, 231, 231, .5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 3px rgba(231, 231, 231, .6)) drop-shadow(0 0 7px rgba(231, 231, 231, .2));
+  }
+}
+
+
+/* ===== BACKGROUND ===== */
 #background {
   z-index: -1;
   background-image: url('/background-hero.webp');
@@ -67,17 +114,16 @@ body {
   background-position: center;
   /* For animation on load */
   opacity: 0;
-  animation: heroFadeIn 2.5s ease-out 500ms forwards;
+  animation: heroBgFadeIn 2s ease-out 500ms forwards, backgroundPulse 6s ease-in-out infinite 2.5s;
 }
 
+/* Divider with fade */
 .bg-fade {
   background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 1));
 }
 
 
-
-
-/* Hero content animation on load */
+/* ===== HERO ANIMATIONS ===== */
 .hero-h1,
 .hero-h2,
 .hero-button {
@@ -86,21 +132,23 @@ body {
 
 /* H1 Animation */
 .hero-h1 {
-  animation: heroFadeIn 1.5s ease-out 700ms forwards;
+  animation: heroTextFadeIn 2s ease-out 1400ms forwards, textGlowPulse 6s ease-in-out infinite 2s;
 }
 
 /* H2 Animation */
 .hero-h2 {
-  animation: heroFadeIn 1.5s ease-out 900ms forwards;
+  animation: heroTextFadeIn 2s ease-out 1700ms forwards;
 }
 
 /* Button Animation */
 .hero-button {
-  animation: heroFadeIn 1.5s ease-out 1100ms forwards;
+  animation: heroTextFadeIn 2s ease-out 2000ms forwards;
 }
 
+
+/* ===== HEADER ANIMATIONS ===== */
 /* Header animation on load */
 .header-animation {
   opacity: 0;
-  animation: headerFadeInDown 1.5s ease-out 600ms forwards;
+  animation: headerFadeInDown 1.5s ease-out 500ms forwards;
 }

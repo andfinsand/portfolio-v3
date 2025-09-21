@@ -17,8 +17,13 @@ export default function Hero() {
                 const scrollY = window.scrollY;
                 // Parallax animation
                 const newYOffset = scrollY * parallaxSpeed;
-                // Opacity
-                const newOpacity = Math.max(0, 1 - scrollY / fadeOutDistance);
+                // Start fading only AFTER % of the fadeOutDistance
+                const fadeStartPoint = fadeOutDistance * 0.4; // Adjust here
+                const adjustedScrollY = Math.max(0, scrollY - fadeStartPoint);
+                const adjustedFadeDistance = fadeOutDistance - fadeStartPoint;
+
+                // Opacity - only starts fading after the fadeStartPoint
+                const newOpacity = scrollY < fadeStartPoint ? 1 : Math.max(0, 1 - adjustedScrollY / adjustedFadeDistance);
 
                 window.requestAnimationFrame(() => {
                     element.style.setProperty('--scroll-offset', `${newYOffset}px`);
