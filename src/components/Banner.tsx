@@ -31,7 +31,7 @@ export default function Banner() {
                     {/* Vertical text - requires wrapper with rotation for fade in(right) animation */}
                     <div className="self-center -rotate-90">
                         <div
-                            // data-aos="fade-right"
+                            data-aos="fade-right"
                             data-aos-duration="700"
                             data-aos-once="true"
                             data-aos-anchor="#trigger-animation"
@@ -45,7 +45,7 @@ export default function Banner() {
                     {/* Content container */}
                     <div
                         id="trigger-animation" /* Trigger point for all animations */
-                        // data-aos="fade-down"
+                        data-aos="fade-down"
                         data-aos-duration="700"
                         data-aos-once="true"
                         data-aos-anchor="#trigger-animation"
@@ -56,28 +56,28 @@ export default function Banner() {
                             <div className="flex flex-col self-center text-[#E7E7E7] gap-0.5 sm:gap-2.5 lg:gap-4 ml-5 sm:ml-7 lg:ml-9 mb-5 lg:mb-0">
                                 {/* Content */}
                                 <div
-                                    // data-aos="reveal-text"
+                                    data-aos="reveal-text"
                                     data-aos-once="true"
                                     data-aos-anchor="#trigger-animation"
                                     data-aos-anchor-placement="bottom-bottom"
                                     className="reveal-delay-1 text-[#888888] font-roboto-condensed text-lg sm:text-xl lg:text-2xl"
                                 >
-                                    today"s
+                                    today's
                                 </div>
                                 <div
-                                    // data-aos="reveal-text"
+                                    data-aos="reveal-text"
                                     data-aos-once="true"
                                     data-aos-anchor="#trigger-animation"
                                     data-aos-anchor-placement="bottom-bottom"
                                     className="reveal-delay-2 font-roboto-condensed font-medium leading-[2.8rem] lg:leading-[3.5rem] text-[40px] sm:text-[45px] lg:text-6xl">DIGITAL</div>
                                 <div
-                                    // data-aos="reveal-text"
+                                    data-aos="reveal-text"
                                     data-aos-once="true"
                                     data-aos-anchor="#trigger-animation"
                                     data-aos-anchor-placement="bottom-bottom"
                                     className="reveal-delay-2 font-roboto-condensed font-medium leading-[2.8rem] lg:leading-[3.5rem] text-[40px] sm:text-[45px] lg:text-6xl">SOLUTIONS</div>
                                 <div
-                                    // data-aos="reveal-text"
+                                    data-aos="reveal-text"
                                     data-aos-once="true"
                                     data-aos-anchor="#trigger-animation"
                                     data-aos-anchor-placement="bottom-bottom"
