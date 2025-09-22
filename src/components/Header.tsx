@@ -12,12 +12,12 @@ export default function Header() {
                     width={437}
                     height={324}
                     priority={true}
-                    className='w-8 sm:w-10 mx-7 xl:mx-9 my-7'
+                    className='w-8 sm:w-10 mx-5 sm:mx-7 xl:mx-9 my-7'
                 />
             </div>
 
             {/* Socials info */}
-            <div className='flex flex-row self-center gap-2 xl:gap-7 mx-7 xl:mx-9 my-7'>
+            <div className='flex flex-row self-center gap-2 xl:gap-7 mx-5 sm:mx-7 xl:mx-9 my-7'>
 
                 {/* Linkedin */}
                 <a

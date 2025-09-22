@@ -155,40 +155,41 @@ body {
 #banner {
   z-index: 1;
   background-image: url('/background-banner-extend.webp');
-  background-size: 63%;
+  background-size: 1200px;
   background-position: center;
   background-attachment: fixed;
-}
-
-@media (max-width: 1024px) {
-  #banner {
-    background-size: 200%;
-  }
-}
-
-@media (max-width: 1535px) {
-  #banner {
-    height: 845px;
-  }
-}
-
-@media (max-width: 1279px) {
-  #banner {
-    height: 703px;
-  }
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1023px) {
   #banner {
-    height: 562px;
+    background-size: 970px;
   }
 }
 
-@media (max-width: 766px) {
+/* @media (max-width: 1535px) {
+  #banner {
+    height: 845px;
+  }
+} */
+
+/* @media (max-width: 1279px) {
+  #banner {
+    height: 703px;
+  }
+} */
+
+/* @media (max-width: 1023px) {
+  #banner {
+    height: 562px;
+  }
+} */
+
+/* @media (max-width: 766px) {
   #banner {
     height: 421px;
   }
-}
+} */
 
 
 /* ===== BANNER TEXT REVEAL ===== */
