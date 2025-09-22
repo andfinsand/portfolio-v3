@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 
+
 /* ===== THEME CONFIGURATION ===== */
 /* Add custom tailwind styling here */
 @theme {
@@ -13,6 +14,7 @@
   --font-sans: var(--font-poppins);
   --font-roboto-condensed: var(--font-roboto-condensed);
 }
+
 
 
 /* ===== CSS CUSTOM PROPERTIES / VARIABLES ===== */
@@ -30,12 +32,14 @@
 }
 
 
+
 /* ===== BASE STYLES ===== */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
+
 
 
 /* ===== ANIMATIONS / KEYFRAMES ===== */
@@ -102,10 +106,11 @@ body {
 }
 
 
+
 /* ===== BACKGROUND ===== */
 #background {
   z-index: -1;
-  background-image: url('/background-hero.webp');
+  background-image: url("/background-hero.webp");
   height: 100%;
   width: 100%;
   top: 0;
@@ -122,6 +127,7 @@ body {
 .bg-fade {
   background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 1));
 }
+
 
 
 /* ===== HERO CONTENT ===== */
@@ -144,6 +150,7 @@ body {
 }
 
 
+
 /* ===== HEADER CONTENT ===== */
 .header-animation {
   opacity: 0;
@@ -151,10 +158,11 @@ body {
 }
 
 
+
 /* ===== BANNER CONTENT ===== */
 #banner {
   z-index: 1;
-  background-image: url('/background-banner-extend.webp');
+  background-image: url("/background-banner-extend.webp");
   background-size: 1200px;
   background-position: center;
   background-attachment: fixed;
@@ -167,38 +175,22 @@ body {
   }
 }
 
-/* @media (max-width: 1535px) {
+@media (max-width: 639px) {
   #banner {
-    height: 845px;
+    background-size: 590px;
+    background-attachment: local;
   }
-} */
+}
 
-/* @media (max-width: 1279px) {
-  #banner {
-    height: 703px;
-  }
-} */
-
-/* @media (max-width: 1023px) {
-  #banner {
-    height: 562px;
-  }
-} */
-
-/* @media (max-width: 766px) {
-  #banner {
-    height: 421px;
-  }
-} */
 
 
 /* ===== BANNER TEXT REVEAL ===== */
-[data-aos='reveal-text'] {
+[data-aos="reveal-text"] {
   position: relative;
 }
 
-[data-aos='reveal-text']::after {
-  content: '';
+[data-aos="reveal-text"]::after {
+  content: "";
   position: absolute;
   top: -2px;
   right: 0;
@@ -226,6 +218,7 @@ body {
 .reveal-delay-3::after {
   transition-delay: 1200ms;
 }
+
 
 
 /* ===== GRADIENT TEXT ===== */
