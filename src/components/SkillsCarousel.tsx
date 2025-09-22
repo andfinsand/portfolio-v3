@@ -1,6 +1,6 @@
 export default function SkillsCarousel() {
     return (
-        <div>
+        <div className="w-full text-center">
             Skills Carousel
         </div>
     );

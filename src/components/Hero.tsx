@@ -40,7 +40,7 @@ export default function Hero() {
 
     return (
         <>
-            <div className='relative flex justify-center items-center h-screen w-full overflow-hidden [--offset:-6.5vh] sm:[--offset:-7.5vh] xl:[--offset:-8.5vh] 2xl:[--offset:-9.5vh] 3xl:[--offset:-10.5vh]'>
+            <div className='relative flex justify-center items-center h-screen w-full overflow-hidden [--offset:-7vh] sm:[--offset:-8vh] xl:[--offset:-9vh] 2xl:[--offset:-10vh] 3xl:[--offset:-11vh]'>
 
                 {/* Background image */}
                 <div id='background'></div>

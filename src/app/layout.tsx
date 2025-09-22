@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import AOSProvider from "@/components/AOSProvider";
 
@@ -8,6 +8,13 @@ const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   variable: "--font-poppins",
+});
+
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-roboto-condensed",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +37,7 @@ export default function RootLayout({
         {/* <link rel="preload" href="/foreground.webp" as="image" /> */}
       </head>
       <body
-        className={`${poppins.variable} antialiased`}
+        className={`${poppins.variable} ${robotoCondensed.variable} antialiased`}
       >
         <AOSProvider>
           {children}
