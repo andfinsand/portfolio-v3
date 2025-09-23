@@ -81,7 +81,7 @@ export default function Banner() {
                                     data-aos-once="true"
                                     data-aos-anchor="#trigger-animation"
                                     data-aos-anchor-placement="bottom-bottom"
-                                    className="reveal-delay-3 tracking-tight text-4xl font-semibold text-[#E7E7E7] text-[42px] sm:text-[47px]lg:text-[55px]">
+                                    className="reveal-delay-3 tracking-tight text-4xl font-semibold text-[#E7E7E7] text-[42px] sm:text-[47px] lg:text-[55px]">
                                     <span className="gradient-text-reverse">
                                         20
                                     </span>
