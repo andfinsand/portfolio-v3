@@ -8,36 +8,52 @@ type SkillsCarouselProps = {
 };
 
 export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [translateX, setTranslateX] = useState(0);
+    const topContainerRef = useRef<HTMLDivElement>(null);
+    const bottomContainerRef = useRef<HTMLDivElement>(null);
+    const [topTranslateX, setTopTranslateX] = useState(0);
+    const [bottomTranslateX, setBottomTranslateX] = useState(0);
 
-    const [items, setItems] = useState([
+    // Top row - Frontend/Design (left to right)
+    const [topItems, setTopItems] = useState([
         { thumbnail: "/logo-html.webp", alt: "HTML logo" },
         { thumbnail: "/logo-css.webp", alt: "CSS logo" },
+        { thumbnail: "/logo-typescript.webp", alt: "TypeScript logo" },
         { thumbnail: "/logo-javascript.webp", alt: "JavaScript logo" },
         { thumbnail: "/logo-react.webp", alt: "React logo" },
         { thumbnail: "/logo-nextjs.webp", alt: "Next.js logo" },
+        { thumbnail: "/logo-tailwindcss.webp", alt: "TailwindCSS logo" },
+        { thumbnail: "/logo-figma.webp", alt: "Figma logo" },
+        { thumbnail: "/logo-gimp.webp", alt: "GIMP logo" },
+    ]);
+
+    // Bottom row - Backend/Tools (right to left)
+    const [bottomItems, setBottomItems] = useState([
         { thumbnail: "/logo-python.webp", alt: "Python logo" },
+        { thumbnail: "/logo-django.webp", alt: "Django logo" },
         { thumbnail: "/logo-flask.webp", alt: "Flask logo" },
-        // { thumbnail: "/logo-django.webp", alt: "Django logo" },
-        // { thumbnail: "/logo-wordpress.webp", alt: "WordPress logo" },
-        // { thumbnail: "/logo-figma.webp", alt: "Figma logo" },
-        // { thumbnail: "/logo-gimp.webp", alt: "GIMP logo" },
+        { thumbnail: "/logo-mongodb.webp", alt: "MongoDB logo" },
+        { thumbnail: "/logo-docker.webp", alt: "Docker logo" },
+        { thumbnail: "/logo-git.webp", alt: "Git logo" },
+        { thumbnail: "/logo-stripe.webp", alt: "Stripe logo" },
+        { thumbnail: "/logo-sanity.webp", alt: "Sanity logo" },
+        { thumbnail: "/logo-wordpress.webp", alt: "WordPress logo" },
     ]);
 
     // Skills carousel animation
     // NOTE: If actively adjusting the viewport width, the carousel will become jumpy. A browser refresh is required for a smooth effect.
     useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
+        const topContainer = topContainerRef.current;
+        const bottomContainer = bottomContainerRef.current;
+        if (!topContainer || !bottomContainer) return;
 
-        let itemFullWidth: number;
+        let topItemFullWidth: number;
+        let bottomItemFullWidth: number;
         let speed = 35;
         let startTime: number;
         let animationFrameId: number;
         let isResizing = false;
 
-        const calculateItemWidth = () => {
+        const calculateItemWidth = (container: HTMLElement) => {
             const firstItem = container.children[0] as HTMLElement;
             if (!firstItem) return 0;
 
@@ -50,11 +66,14 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
         };
 
         const resetAnimation = () => {
-            const newItemWidth = calculateItemWidth();
-            if (newItemWidth > 0) {
-                itemFullWidth = newItemWidth;
+            const newTopItemWidth = calculateItemWidth(topContainer);
+            const newBottomItemWidth = calculateItemWidth(bottomContainer);
+            if (newTopItemWidth > 0 && newBottomItemWidth > 0) {
+                topItemFullWidth = newTopItemWidth;
+                bottomItemFullWidth = newBottomItemWidth;
                 startTime = performance.now();
-                setTranslateX(0);
+                setTopTranslateX(0);
+                setBottomTranslateX(-bottomItemFullWidth);
                 isResizing = false;
             }
         };
@@ -63,7 +82,7 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
         resetAnimation();
 
         const animate = (timestamp: number) => {
-            if (isResizing || !itemFullWidth) {
+            if (isResizing || !topItemFullWidth || !bottomItemFullWidth) {
                 animationFrameId = requestAnimationFrame(animate);
                 return;
             }
@@ -71,18 +90,31 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
             if (!startTime) startTime = timestamp;
 
             const progress = (timestamp - startTime) / 1000;
-            let newTranslateX = progress * speed;
+            let newTopTranslateX = progress * speed;
+            let newBottomTranslateX = progress * speed;
 
-            if (newTranslateX >= itemFullWidth) {
-                setItems(prevItems => {
+            // Top carousel (right to left)
+            if (newTopTranslateX >= topItemFullWidth) {
+                setTopItems(prevItems => {
                     const newItems = [...prevItems.slice(1), prevItems[0]];
                     return newItems;
                 });
-                newTranslateX = 0;
+                newTopTranslateX = 0;
                 startTime = timestamp;
             }
 
-            setTranslateX(-newTranslateX);
+            // Bottom carousel (left to right)
+            if (newBottomTranslateX >= bottomItemFullWidth) {
+                setBottomItems(prevItems => {
+                    const newItems = [prevItems[prevItems.length - 1], ...prevItems.slice(0, -1)];
+                    return newItems;
+                });
+                newBottomTranslateX = 0;
+                startTime = timestamp;
+            }
+
+            setTopTranslateX(-newTopTranslateX);
+            setBottomTranslateX(-bottomItemFullWidth + newBottomTranslateX); // Keep bottom carousel offset by one item width
             animationFrameId = requestAnimationFrame(animate);
         };
 
@@ -98,19 +130,18 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
                 }
                 resetAnimation();
                 animationFrameId = requestAnimationFrame(animate);
-            }, 150); // 150ms debounce to avoid too many recalculations
+            }, 150);
         };
 
-        // Use ResizeObserver for more precise detection
         let resizeObserver: ResizeObserver | null = null;
 
         if (typeof ResizeObserver !== 'undefined') {
             resizeObserver = new ResizeObserver(() => {
                 handleResize();
             });
-            resizeObserver.observe(container);
+            resizeObserver.observe(topContainer);
+            resizeObserver.observe(bottomContainer);
         } else {
-            // Fallback to window resize
             window.addEventListener('resize', handleResize);
         }
 
@@ -129,29 +160,47 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
                 window.removeEventListener('resize', handleResize);
             }
         };
-    }, []); // Empty dependency array since we handle everything internally
+    }, []);
 
     if (isMobile) {
         return null;
     }
 
     return (
-        <>
+        <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
+            {/* Top Carousel - Left to Right */}
             <div className="carouselWrapper flex overflow-hidden w-full max-w-[1200px]">
                 <div
-                    ref={containerRef}
+                    ref={topContainerRef}
                     className="flex flex-row"
-                    style={{ transform: `translateX(${translateX}px)`, willChange: 'transform' }}
+                    style={{ transform: `translateX(${topTranslateX}px)`, willChange: 'transform' }}
                 >
-                    {items.map((item, index) => (
+                    {topItems.map((item) => (
                         <SkillsCarouselImage
-                            key={item.thumbnail}
+                            key={`top-${item.thumbnail}`}
                             thumbnail={item.thumbnail}
                             alt={item.alt}
                         />
                     ))}
                 </div>
             </div>
-        </>
+
+            {/* Bottom Carousel - Right to Left */}
+            <div className="carouselWrapper flex overflow-hidden w-full max-w-[1200px]">
+                <div
+                    ref={bottomContainerRef}
+                    className="flex flex-row"
+                    style={{ transform: `translateX(${bottomTranslateX}px)`, willChange: 'transform' }}
+                >
+                    {bottomItems.map((item) => (
+                        <SkillsCarouselImage
+                            key={`bottom-${item.thumbnail}`}
+                            thumbnail={item.thumbnail}
+                            alt={item.alt}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
     );
 };
