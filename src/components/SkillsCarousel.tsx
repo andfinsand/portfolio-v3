@@ -16,7 +16,6 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
     // Top row - Frontend/Design (left to right)
     const [topItems, setTopItems] = useState([
         { thumbnail: "/logo-html.webp", alt: "HTML logo" },
-        { thumbnail: "/logo-css.webp", alt: "CSS logo" },
         { thumbnail: "/logo-typescript.webp", alt: "TypeScript logo" },
         { thumbnail: "/logo-javascript.webp", alt: "JavaScript logo" },
         { thumbnail: "/logo-react.webp", alt: "React logo" },
@@ -24,6 +23,7 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
         { thumbnail: "/logo-tailwindcss.webp", alt: "TailwindCSS logo" },
         { thumbnail: "/logo-figma.webp", alt: "Figma logo" },
         { thumbnail: "/logo-gimp.webp", alt: "GIMP logo" },
+        { thumbnail: "/logo-css.webp", alt: "CSS logo" },
     ]);
 
     // Bottom row - Backend/Tools (right to left)
@@ -48,7 +48,7 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
 
         let topItemFullWidth: number;
         let bottomItemFullWidth: number;
-        let speed = 35;
+        let speed = 25;
         let startTime: number;
         let animationFrameId: number;
         let isResizing = false;
