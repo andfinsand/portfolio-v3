@@ -10,10 +10,11 @@ export default function Center() {
             < SkillsCarousel isMobile={false} />
             {/* Projects Section */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-10 w-full max-w-[1200px]">
-                {projectsData.map((project, index) => (
+                {projectsData.map((project) => (
                     <ProjectCard
                         key={project.name}
                         name={project.name}
+                        subtitle={project.subtitle}
                         thumbnail={project.thumbnail}
                         demo={project.demo}
                         projectUrl={project.projectUrl}

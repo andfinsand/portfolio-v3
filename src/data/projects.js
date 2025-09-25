@@ -1,6 +1,7 @@
 export const projectsData = [
     {
         name: "That's What She Threads",
+        subtitle: "E-Commerce Apparel Store",
         thumbnail: "/thumbnail-thats-what-she-threads.webp",
         demo: "/demo-thats-what-she-threads.mp4",
         projectUrl: "https://thatswhatshethreads.shop/",
@@ -12,6 +13,7 @@ export const projectsData = [
     },
     {
         name: "PixelAngelo",
+        subtitle: "AI-Image Upscaler",
         thumbnail: "/thumbnail-pixelangelo.webp",
         demo: "/demo-pixelangelo.mp4",
         projectUrl: "https://pixelangelo.io/",
@@ -23,6 +25,7 @@ export const projectsData = [
     },
     {
         name: "Gradient Wizard",
+        subtitle: "AI Gradient Generator",
         thumbnail: "/thumbnail-gradient-wizard.webp",
         demo: "/demo-gradient-wizard.mp4",
         projectUrl: "https://gradientwizard.io/",
@@ -34,6 +37,7 @@ export const projectsData = [
     },
     {
         name: "HVAC Demo",
+        subtitle: "HVAC Website Demo",
         thumbnail: "/thumbnail-hvac-demo.webp",
         demo: "/demo-hvac-demo.mp4",
         projectUrl: "https://hvac-website-demo.netlify.app/",
@@ -45,6 +49,7 @@ export const projectsData = [
     },
     {
         name: "Finsand Design",
+        subtitle: "Architecture Portfolio",
         thumbnail: "/thumbnail-finsand-design.webp",
         demo: "/demo-finsand-design.mp4",
         projectUrl: "https://finsanddesign.com/",
@@ -56,6 +61,7 @@ export const projectsData = [
     },
     //   {
     //     name: "Apefolio",
+    //     subtitle: "Crypto Portfolio",
     //     thumbnail: "/thumbnail-apefolio.webp",
     //     demo: "/demo-apefolio.mp4",
     //     projectUrl: "https://crypto-portfolio-production.up.railway.app/",

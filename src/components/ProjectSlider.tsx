@@ -1,11 +1,12 @@
 import Image from "next/image";
-import TechnologyBubble from "./TechnologyBubble";
+import ProjectTechLabel from "./ProjectTechLabel";
 // import SliderImage from "./SliderImage";
 
 type ProjectSliderProps = {
     showSlide: boolean;
     toggleSlider: () => void;
     name: string;
+    subtitle: string;
     projectUrl: string;
     github: string;
     description: string;
@@ -14,53 +15,70 @@ type ProjectSliderProps = {
     exampleImages: string;
 };
 
-export default function ProjectSlider({ showSlide, toggleSlider, name, projectUrl, github, description, technical, technologyLabel, exampleImages }: ProjectSliderProps) {
+export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle, projectUrl, github, description, technical, technologyLabel, exampleImages }: ProjectSliderProps) {
     return (
         <>
 
             {/* Footer positioning when expanded */}
-            <div className={`absolute text-[#E7E7E7] w-full z-50 bottom-0 transition-[top] ease-in-out duration-500 ${showSlide ? "top-0" : "top-[calc(100%-67.5px)]"}`}>
+            <div className={`absolute text-[#E7E7E7] w-full z-50 bottom-0 transition-[top] ease-in-out duration-500 ${showSlide ? "top-0" : "top-[calc(100%-78px)]"}`}>
                 <div className="bg-[#1B1A1F] h-full overflow-hidden rounded-t-lg">
 
-                    {/* Wrapper for footer head - project name, github, and button */}
-                    <div className="flex justify-between items-center h-[67.5px] px-5 sm:px-7">
+                    {/* Wrapper for footer head - project name, subtitle, github, and expand button */}
+                    <div className="flex flex-col justify-center self-center gap-0.5 h-[67.5px] px-5 sm:px-7">
 
-                        {/* Project name */}
-                        <a
-                            href={projectUrl}
-                            target="_blank"
-                            className="tracking-wide font-medium hover:text-white/50 duration-100"
-                        >
-                            {name}
-                        </a>
+                        {/* Top container - name, github, and expand button */}
+                        <div className="flex justify-between">
+                            <a
+                                href={projectUrl}
+                                target="_blank"
+                                className="group flex flex-row w-auto gap-1.5 tracking-wide font-medium hover:text-white/50 duration-100"
+                            >
 
-                        <div className="flex gap-6">
+                                {name}
 
-                            {/* Github icon */}
-                            {github && (
-                                <a
-                                    href={github}
-                                    target="_blank"
-                                >
-                                    <Image
-                                        src="/github-project.svg"
-                                        alt="Github logo"
-                                        width={100}
-                                        height={100}
-                                        className="w-6 hover:brightness-[.5] duration-100"
-                                    />
-                                </a>
-                            )}
+                                <Image
+                                    src="/external-link.svg"
+                                    alt="Open external link icon"
+                                    width={100}
+                                    height={100}
+                                    priority={true}
+                                    className="w-4 xl:w-5 group-hover:brightness-[.5] duration-100"
+                                />
+                            </a>
 
-                            {/* Info button to display project slide */}
-                            <button
-                                onClick={toggleSlider}
-                                aria-label={showSlide ? "Hide project card footer" : "Show project card footer"}
-                                type="button"
-                                aria-expanded={showSlide}
-                                className="group flex justify-center cursor-pointer border-2 border-[#E7E7E7] rounded-[4px] w-6 h-[23.5px] hover:bg-[#E7E7E7] duration-100">
-                                <span aria-hidden="true" className={`caret self-center transition-transform duration-700 ${showSlide ? "transform rotate-180" : ""}`}></span>
-                            </button>
+                            <div className="flex gap-6">
+
+                                {/* Github icon */}
+                                {github && (
+                                    <a
+                                        href={github}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            src="/github-project.svg"
+                                            alt="Github logo"
+                                            width={100}
+                                            height={100}
+                                            className="w-6 hover:brightness-[.5] duration-100"
+                                        />
+                                    </a>
+                                )}
+
+                                {/* Info button to display project slide */}
+                                <button
+                                    onClick={toggleSlider}
+                                    aria-label={showSlide ? "Hide project card footer" : "Show project card footer"}
+                                    type="button"
+                                    aria-expanded={showSlide}
+                                    className="group flex justify-center cursor-pointer border-2 border-[#E7E7E7] rounded-[4px] w-6 h-[23.5px] hover:bg-[#E7E7E7] duration-100">
+                                    <span aria-hidden="true" className={`caret self-center transition-transform duration-700 ${showSlide ? "transform rotate-180" : ""}`}></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Bottom container - Subtitle */}
+                        <div className="text-sm text-[#A1A1AA]">
+                            {subtitle}
                         </div>
                     </div>
 

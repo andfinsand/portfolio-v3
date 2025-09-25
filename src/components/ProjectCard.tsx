@@ -6,6 +6,7 @@ import ProjectSlider from "./ProjectSlider"
 
 type ProjectCardProps = {
     name: string;
+    subtitle: string;
     thumbnail: string;
     demo: string;
     projectUrl: string;
@@ -16,7 +17,7 @@ type ProjectCardProps = {
     exampleImages: string;
 };
 
-export default function ProjectCard({ name, thumbnail, demo, projectUrl, github, description, technical, technologyLabel, exampleImages }: ProjectCardProps) {
+export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUrl, github, description, technical, technologyLabel, exampleImages }: ProjectCardProps) {
     const [isHovered, setIsHovered] = useState(false);
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const videoRef = useRef<any>(null);
@@ -29,12 +30,6 @@ export default function ProjectCard({ name, thumbnail, demo, projectUrl, github,
         const userAgent = window.navigator.userAgent;
         setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent));
     }, []);
-
-    // Toggle video display to continue playing when button is clicked
-    const toggleVideo = () => {
-        setShowVideo(!showVideo);
-        setShowVideo(true);
-    };
 
     // Display slide
     const toggleSlider = () => {
@@ -67,7 +62,7 @@ export default function ProjectCard({ name, thumbnail, demo, projectUrl, github,
         opacity: showVideo ? 1 : 0,
         transition: "opacity 100ms",
         zIndex: showVideo ? 2 : 1,
-        height: 'calc(85% + 11px)',
+        height: 'calc(80% + 16px)',
     };
 
     return (
@@ -75,14 +70,14 @@ export default function ProjectCard({ name, thumbnail, demo, projectUrl, github,
             {/* Consider 320px or 358px height for modern appearance */}
             <div className="relative flex justify-center overflow-hidden rounded-3xl bg-[#1B1A1F] w-full h-[350px] md:h-[435px] p-2 sm:p-4">
 
-                {/* Top layer */}
+                {/* Thumbnail and video layer */}
                 <div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     className="group relative w-full h-full"
                 >
 
-                    {/* Link to project */}
+                    {/* Link to project layer */}
                     <a
                         href={projectUrl}
                         target="_blank"
@@ -113,11 +108,9 @@ export default function ProjectCard({ name, thumbnail, demo, projectUrl, github,
                             width={1200}
                             height={1029}
                             className="absolute inset-0 object-cover rounded-2xl w-full"
-                            style={{ height: 'calc(85% + 9px)' }}
+                            style={{ height: 'calc(80% + 16px)' }} /* Must calculate for parent padding */
                         />
-
                     </a>
-
                 </div>
 
                 {/* Project information slide */}
@@ -125,6 +118,7 @@ export default function ProjectCard({ name, thumbnail, demo, projectUrl, github,
                     showSlide={showSlide}
                     toggleSlider={toggleSlider}
                     name={name}
+                    subtitle={subtitle}
                     projectUrl={projectUrl}
                     github={github}
                     description={description}
@@ -132,7 +126,6 @@ export default function ProjectCard({ name, thumbnail, demo, projectUrl, github,
                     technologyLabel={technologyLabel}
                     exampleImages={exampleImages}
                 />
-
             </div>
         </>
     );

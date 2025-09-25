@@ -60,7 +60,7 @@ export default function Banner() {
                                     data-aos-once="true"
                                     data-aos-anchor="#trigger-animation"
                                     data-aos-anchor-placement="bottom-bottom"
-                                    className="reveal-delay-1 text-[#888888] font-roboto-condensed text-lg sm:text-xl lg:text-2xl"
+                                    className="reveal-delay-1 text-[#A1A1AA] font-roboto-condensed text-lg sm:text-xl lg:text-2xl"
                                 >
                                     today's
                                 </div>
