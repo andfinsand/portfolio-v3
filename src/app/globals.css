@@ -257,3 +257,48 @@ body {
 
   background: linear-gradient(to left, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0));
 }
+
+
+
+
+/* ===== PROJECT CARD CARET ===== */
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 9px solid;
+  margin-bottom: 1px;
+  color: #E7E7E7;
+  transition: color 100ms;
+}
+
+.group:hover .caret {
+  color: #1B1A1F;
+}
+
+
+
+/* ===== SCROLL BAR ===== */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #616161;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar {
+  scrollbar-gutter: stable;
+}
