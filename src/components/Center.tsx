@@ -21,7 +21,7 @@ export default function Center() {
                         github={project.github}
                         description={project.description}
                         technical={project.technical}
-                        technologyLabel={project.technologyLabel}
+                        technologyBadge={project.technologyBadge}
                         exampleImages={project.exampleImages}
                     />
                 ))}

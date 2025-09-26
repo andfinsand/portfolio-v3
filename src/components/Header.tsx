@@ -29,6 +29,7 @@ export default function Header() {
                     <Image
                         src="/linkedin.svg"
                         alt="Linkedin icon"
+                        title="View LinkedIn profile"
                         width={100}
                         height={100}
                         priority={true}
@@ -45,6 +46,7 @@ export default function Header() {
                     <Image
                         src="/github.svg"
                         alt="Github icon"
+                        title="View GitHub profile"
                         width={100}
                         height={100}
                         priority={true}
@@ -55,6 +57,7 @@ export default function Header() {
                 {/* Email */}
                 <a
                     href="mailto:andfinsand@gmail.com"
+                    title="Contact me"
                     className="group flex justify-center w-[35px] h-[35px] hover:bg-[#E7E7E7] hover:rounded-full hover:p-1 duration-200"
 
                 >

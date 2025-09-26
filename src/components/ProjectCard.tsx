@@ -13,11 +13,11 @@ type ProjectCardProps = {
     github: string;
     description: string;
     technical: string;
-    technologyLabel: string[];
+    technologyBadge: string[];
     exampleImages: string;
 };
 
-export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUrl, github, description, technical, technologyLabel, exampleImages }: ProjectCardProps) {
+export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUrl, github, description, technical, technologyBadge, exampleImages }: ProjectCardProps) {
     const [isHovered, setIsHovered] = useState(false);
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const videoRef = useRef<any>(null);
@@ -62,7 +62,7 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
         opacity: showVideo ? 1 : 0,
         transition: "opacity 100ms",
         zIndex: showVideo ? 2 : 1,
-        height: 'calc(80% + 16px)',
+        height: 'calc(80% + 17px)',
     };
 
     return (
@@ -80,6 +80,7 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
                     {/* Link to project layer */}
                     <a
                         href={projectUrl}
+                        title="Visit live site"
                         target="_blank"
                         className="flex w-full h-[85%]"
                     >
@@ -108,7 +109,7 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
                             width={1200}
                             height={1029}
                             className="absolute inset-0 object-cover rounded-2xl w-full"
-                            style={{ height: 'calc(80% + 16px)' }} /* Must calculate for parent padding */
+                            style={{ height: 'calc(80% + 17px)' }} /* Must calculate for parent padding */
                         />
                     </a>
                 </div>
@@ -123,7 +124,7 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
                     github={github}
                     description={description}
                     technical={technical}
-                    technologyLabel={technologyLabel}
+                    technologyBadge={technologyBadge}
                     exampleImages={exampleImages}
                 />
             </div>

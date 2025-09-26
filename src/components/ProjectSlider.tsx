@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProjectTechLabel from "./ProjectTechLabel";
+import ProjectTechBadge from "./ProjectTechBadge";
 // import SliderImage from "./SliderImage";
 
 type ProjectSliderProps = {
@@ -11,25 +11,26 @@ type ProjectSliderProps = {
     github: string;
     description: string;
     technical: string;
-    technologyLabel: string[];
+    technologyBadge: string[];
     exampleImages: string;
 };
 
-export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle, projectUrl, github, description, technical, technologyLabel, exampleImages }: ProjectSliderProps) {
+export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle, projectUrl, github, description, technical, technologyBadge, exampleImages }: ProjectSliderProps) {
     return (
         <>
 
-            {/* Footer positioning when expanded */}
-            <div className={`absolute text-[#E7E7E7] w-full z-50 bottom-0 transition-[top] ease-in-out duration-500 ${showSlide ? "top-0" : "top-[calc(100%-78px)]"}`}>
+            {/* Footer positioning when expanded - adjust both padding-y and calculated top to adjust footer height and vertical spacing*/}
+            <div className={`absolute text-[#E7E7E7] w-full z-50 bottom-0 transition-[top] ease-in-out duration-500 ${showSlide ? "top-0 py-3" : "top-[calc(100%-88px)] py-3"}`}>
                 <div className="bg-[#1B1A1F] h-full overflow-hidden rounded-t-lg">
 
                     {/* Wrapper for footer head - project name, subtitle, github, and expand button */}
                     <div className="flex flex-col justify-center self-center gap-0.5 h-[67.5px] px-5 sm:px-7">
 
-                        {/* Top container - name, github, and expand button */}
+                        {/* Top footer container - name, github, and expand button */}
                         <div className="flex justify-between">
                             <a
                                 href={projectUrl}
+                                title="Visit live site"
                                 target="_blank"
                                 className="group flex flex-row w-auto gap-1.5 tracking-wide font-medium hover:text-white/50 duration-100"
                             >
@@ -52,6 +53,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                 {github && (
                                     <a
                                         href={github}
+                                        title="View source code"
                                         target="_blank"
                                     >
                                         <Image
@@ -67,6 +69,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                 {/* Info button to display project slide */}
                                 <button
                                     onClick={toggleSlider}
+                                    title="View project details"
                                     aria-label={showSlide ? "Hide project card footer" : "Show project card footer"}
                                     type="button"
                                     aria-expanded={showSlide}
@@ -76,7 +79,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                             </div>
                         </div>
 
-                        {/* Bottom container - Subtitle */}
+                        {/* Bottom footer container - Subtitle */}
                         <div className="text-sm text-[#A1A1AA]">
                             {subtitle}
                         </div>
@@ -88,7 +91,15 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                     {/* Slider main content */}
                     <div className="custom-scrollbar overflow-y-auto h-[calc(100%-67.5px)] px-5 sm:px-7 py-7 xs:py-10">
 
-                        <div className={`flex flex-col gap-7 xs:gap-10 lg:gap-12 transition-opacity duration-700 ${showSlide ? "opacity-100" : "opacity-0"}`}>
+                        <div className={`flex flex-col gap-7 lg:gap-10 transition-opacity duration-700 ${showSlide ? "opacity-100" : "opacity-0"}`}>
+
+                            {/* Map languages and framework badges */}
+                            <div className="flex flex-wrap justify-start self-center w-full gap-4">
+                                {technologyBadge.map((label, index) => (
+                                    <ProjectTechBadge key={index} label={label} />
+                                ))}
+                            </div>
+
                             {/* Description */}
                             <div className="flex flex-col gap-5">
                                 <div className="font-semibold">Description</div>
@@ -99,13 +110,6 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                             <div className="flex flex-col gap-5">
                                 <div className="font-semibold">Technical</div>
                                 <div className="leading-normal text-white/80 text-sm">{technical}</div>
-                            </div>
-
-                            {/* Map languages and frameworks */}
-                            <div className="flex flex-wrap justify-around self-center w-full text-white text-sm gap-x-2 gap-y-4 xs:justify-between">
-                                {/* {technologyLabel.map((label, index) => (
-                            <TechnologyBubble key={index} label={label} />
-                        ))} */}
                             </div>
 
                             {/* Example images if applicable */}

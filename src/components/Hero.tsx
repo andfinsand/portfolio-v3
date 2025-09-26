@@ -73,6 +73,7 @@ export default function Hero() {
                     <div className="hero-button flex justify-center w-full">
                         <a
                             href="resume.pdf"
+                            title="Open resume in new tab"
                             rel="noopener noreferrer"
                             target="_blank"
                             className="group flex border-1 xl:border-2 border-[#9b9b9b] rounded-full w-fit gap-1 px-4 py-2 hover:bg-white/15 hover:backdrop-blur-sm duration-200"
