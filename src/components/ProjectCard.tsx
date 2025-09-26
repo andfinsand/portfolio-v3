@@ -18,17 +18,21 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUrl, github, description, technical, technologyBadge, exampleImages }: ProjectCardProps) {
-    const [isHovered, setIsHovered] = useState(false);
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const videoRef = useRef<any>(null);
     const [showSlide, setShowSlide] = useState<boolean>(false);
     const [showVideo, setShowVideo] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const [supportsHover, setSupportsHover] = useState(false);
 
-    // Detect device type, mobile vs desktop
+    // Detect hover support
     useEffect(() => {
-        const userAgent = window.navigator.userAgent;
-        setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent));
+        const mediaQuery = window.matchMedia('(hover: hover)');
+        setSupportsHover(mediaQuery.matches);
+
+        // Listen for changes (rare, but covers dynamic input switches)
+        const handleChange = () => setSupportsHover(mediaQuery.matches);
+        mediaQuery.addEventListener('change', handleChange);
+        return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
     // Display slide
@@ -38,7 +42,6 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
 
     // Play video on hover and pause when hover is stopped
     const handleMouseEnter = () => {
-        setIsHovered(true);
         setShowVideo(true);
         if (videoRef.current && !isVideoPlaying) {
             videoRef.current.play();
@@ -47,7 +50,6 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
     };
 
     const handleMouseLeave = () => {
-        setIsHovered(false);
         if (!showSlide) {
             setShowVideo(false);
         }
@@ -62,13 +64,12 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
         opacity: showVideo ? 1 : 0,
         transition: "opacity 100ms",
         zIndex: showVideo ? 2 : 1,
-        height: 'calc(80% + 17px)',
     };
 
     return (
         <>
             {/* Consider 320px or 358px height for modern appearance */}
-            <div className="relative flex justify-center overflow-hidden rounded-3xl bg-[#1B1A1F] w-full h-[350px] md:h-[435px] p-2 sm:p-4">
+            <div className="relative flex justify-center overflow-hidden rounded-3xl bg-[#1B1A1F] w-full h-[380px] md:h-[435px] p-2 sm:p-4">
 
                 {/* Thumbnail and video layer */}
                 <div
@@ -82,18 +83,18 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
                         href={projectUrl}
                         title="Visit live site"
                         target="_blank"
-                        className="flex w-full h-[85%]"
+                        className="flex w-full h-[calc(80%+5px)] md:h-[calc(80%+17px)]"
                     >
 
                         {/* Video */}
-                        {!isMobile && (
+                        {supportsHover && (
                             <video
                                 loop
                                 muted
                                 preload="metadata"
                                 ref={videoRef}
                                 style={videoStyle}
-                                className="absolute inset-0 object-cover rounded-2xl w-full h-[85%]"
+                                className="absolute inset-0 object-cover rounded-2xl w-full h-[calc(80%+5px)] md:h-[calc(80%+17px)]"
                             >
                                 <source
                                     src={demo}
@@ -108,8 +109,7 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
                             alt="Project logo"
                             width={1200}
                             height={1029}
-                            className="absolute inset-0 object-cover rounded-2xl w-full"
-                            style={{ height: 'calc(80% + 17px)' }} /* Must calculate for parent padding */
+                            className="absolute inset-0 object-cover h-[calc(80%+5px)] md:h-[calc(80%+17px)] rounded-2xl w-full"
                         />
                     </a>
                 </div>

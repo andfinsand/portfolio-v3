@@ -20,7 +20,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
         <>
 
             {/* Footer positioning when expanded - adjust both padding-y and calculated top to adjust footer height and vertical spacing*/}
-            <div className={`absolute text-[#E7E7E7] w-full z-50 bottom-0 transition-[top] ease-in-out duration-500 ${showSlide ? "top-0 py-3" : "top-[calc(100%-88px)] py-3"}`}>
+            <div className={`absolute text-[#E7E7E7] w-full z-50 bottom-0 transition-[top] ease-in-out duration-500 ${showSlide ? "top-0 py-2 sm:py-3" : "top-[calc(100%-88px)] py-3"}`}>
                 <div className="bg-[#1B1A1F] h-full overflow-hidden rounded-t-lg">
 
                     {/* Wrapper for footer head - project name, subtitle, github, and expand button */}
@@ -94,7 +94,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                         <div className={`flex flex-col gap-7 lg:gap-10 transition-opacity duration-700 ${showSlide ? "opacity-100" : "opacity-0"}`}>
 
                             {/* Map languages and framework badges */}
-                            <div className="flex flex-wrap justify-start self-center w-full gap-4">
+                            <div className="flex flex-wrap justify-start self-center w-full gap-3 sm:gap-4">
                                 {technologyBadge.map((label, index) => (
                                     <ProjectTechBadge key={index} label={label} />
                                 ))}
