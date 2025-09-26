@@ -59,16 +59,16 @@ export const projectsData = [
         technologyBadge: ["WordPress", "Javascript", "Sass", "PHP", "Figma"],
         exampleImages: ""
     },
-    //   {
-    //     name: "Apefolio",
-    //     subtitle: "Crypto Portfolio",
-    //     thumbnail: "/thumbnail-apefolio.webp",
-    //     demo: "/demo-apefolio.mp4",
-    //     projectUrl: "https://crypto-portfolio-production.up.railway.app/",
-    //     github: "https://github.com/dna-projects/crypto-portfolio",
-    //     description: "A web application to monitor your cryptocurrency portfolio. View overall portfolio balance with profit and loss percentages. Add new tokens to your portfolio and view calculated holdings based on live prices. View global cryptocurrency market cap data and search for specific tokens.",
-    //     technical: "Apefolio is a fullstack application developed with Django. The front end utilizes TailwindCSS and the Django template language while SQLite manages the database. Class-based views in Python are used on the server to modularize back end functionality. APIs fetch data from CoinGecko.com to display live token prices, as well as additional token information when using the search feature.",
-    //     technologyBadge: ["Python", "Django", "HTML5", "TailwindCSS", "SQLite"],
-    //     exampleImages: ""
-    //   }
+    {
+        name: "Apefolio",
+        subtitle: "Crypto Portfolio",
+        thumbnail: "/thumbnail-apefolio.webp",
+        demo: "/demo-apefolio.mp4",
+        projectUrl: "https://crypto-portfolio-production.up.railway.app/",
+        github: "https://github.com/dna-projects/crypto-portfolio",
+        description: "A web application to monitor your cryptocurrency portfolio. View overall portfolio balance with profit and loss percentages. Add new tokens to your portfolio and view calculated holdings based on live prices. View global cryptocurrency market cap data and search for specific tokens.",
+        technical: "Apefolio is a fullstack application developed with Django. The front end utilizes TailwindCSS and the Django template language while SQLite manages the database. Class-based views in Python are used on the server to modularize back end functionality. APIs fetch data from CoinGecko.com to display live token prices, as well as additional token information when using the search feature.",
+        technologyBadge: ["Python", "Django", "HTML5", "TailwindCSS", "SQLite"],
+        exampleImages: ""
+    }
 ];

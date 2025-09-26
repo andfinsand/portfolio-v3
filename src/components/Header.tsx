@@ -17,7 +17,7 @@ export default function Header() {
             </div>
 
             {/* Socials info */}
-            <div className="flex flex-row self-center gap-2 xl:gap-7 mx-5 sm:mx-7 xl:mx-9 my-7">
+            <div className="flex flex-row self-center gap-2 xl:gap-4 mx-5 sm:mx-7 xl:mx-9 my-7">
 
                 {/* Linkedin */}
                 <a
