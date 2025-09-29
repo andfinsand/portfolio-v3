@@ -5,7 +5,7 @@ import { projectsData } from "../data/projects";
 
 export default function Center() {
     return (
-        <div className="flex flex-col items-center w-full h-fit gap-16 sm:gap-24 lg:gap-32 px-5 lg:px-14 py-6 sm:py-20 lg:py-36 xl:py-40">
+        <div className="flex flex-col items-center w-full h-fit gap-16 sm:gap-24 lg:gap-32 px-5 lg:px-14 py-2 sm:py-20 lg:py-36 xl:py-40">
             < Banner />
             < SkillsCarousel isMobile={false} />
             {/* Projects Section */}

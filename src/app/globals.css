@@ -43,6 +43,7 @@ body {
 
 
 /* ===== ANIMATIONS / KEYFRAMES ===== */
+/* Old - currently using bg zoom in below */
 @keyframes heroBgFadeIn {
   from {
     opacity: 0;
@@ -55,15 +56,39 @@ body {
   }
 }
 
-@keyframes heroTextFadeIn {
+/* Current */
+@keyframes heroBgZoomIn {
   from {
     opacity: 0;
-    /* transform: translateY(-12px); */
+    transform: scale(1.1);
   }
 
   to {
     opacity: 1;
-    /* transform: translateY(0); */
+    transform: scale(1);
+  }
+}
+
+/* @keyframes heroTextFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+} */
+
+@keyframes heroTextFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start below, move up */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -107,6 +132,7 @@ body {
 
 
 
+
 /* ===== BACKGROUND ===== */
 #background {
   z-index: -1;
@@ -120,7 +146,7 @@ body {
   background-position: center;
   /* For animation on load */
   opacity: 0;
-  animation: heroBgFadeIn 2s ease-out 500ms forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
+  animation: heroBgZoomIn 1.5s ease-out 0.1s forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
 }
 
 /* Divider with fade */
@@ -138,24 +164,24 @@ body {
 }
 
 .hero-h1 {
-  animation: heroTextFadeIn 1s ease-out 1400ms forwards, textGlowPulse 7s ease-in-out infinite 2s;
+  animation: heroTextFadeIn 0.8s ease-out 0.6s forwards, textGlowPulse 7s ease-in-out infinite 2s;
 }
 
 .hero-h2 {
-  animation: heroTextFadeIn 1s ease-out 1700ms forwards;
+  animation: heroTextFadeIn 0.8s ease-out 0.8s forwards;
 }
 
 .hero-button {
-  animation: heroTextFadeIn 1s ease-out 2000ms forwards;
+  animation: heroTextFadeIn 0.8s ease-out 1s forwards;
 }
 
 
 
 /* ===== HEADER CONTENT ===== */
-.header-animation {
+/* .header-animation {
   opacity: 0;
   animation: headerFadeInDown 1.5s ease-out 500ms forwards;
-}
+} */
 
 
 
@@ -274,8 +300,10 @@ body {
   transition: color 100ms;
 }
 
-.group:hover .caret {
-  color: #1B1A1F;
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .caret {
+    color: #1B1A1F;
+  }
 }
 
 
