@@ -15,7 +15,7 @@ type ProjectSliderProps = {
     exampleImages: string;
 };
 
-export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle, projectUrl, github, description, technical, technologyBadge, exampleImages }: ProjectSliderProps) {
+export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle, projectUrl, github, description, technical, technologyBadge }: ProjectSliderProps) {
     return (
         <>
 

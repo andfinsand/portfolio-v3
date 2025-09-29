@@ -19,7 +19,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUrl, github, description, technical, technologyBadge, exampleImages }: ProjectCardProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-    const videoRef = useRef<any>(null);
+    const videoRef = useRef<HTMLVideoElement | null>(null);
     const [showSlide, setShowSlide] = useState<boolean>(false);
     const [showVideo, setShowVideo] = useState(false);
     const [supportsHover, setSupportsHover] = useState(false);

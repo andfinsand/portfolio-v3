@@ -7,9 +7,9 @@ export default function Banner() {
 
         // Background parallax effect
         document.addEventListener("scroll", function () {
-            let scrollPosition = window.scrollY;
-            let parallaxElement = document.getElementById("banner");
-            let speed = 0.2;
+            const scrollPosition = window.scrollY;
+            const parallaxElement = document.getElementById("banner");
+            const speed = 0.2;
 
             if (parallaxElement) {
                 parallaxElement.style.backgroundPosition = `center ${-scrollPosition * speed}px`;
@@ -62,7 +62,7 @@ export default function Banner() {
                                     data-aos-anchor-placement="bottom-bottom"
                                     className="reveal-delay-1 text-[#A1A1AA] font-roboto-condensed text-lg sm:text-xl lg:text-2xl"
                                 >
-                                    today's
+                                    today&apos;s
                                 </div>
                                 <div
                                     data-aos="reveal-text"

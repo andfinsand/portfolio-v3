@@ -48,7 +48,7 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
 
         let topItemFullWidth: number;
         let bottomItemFullWidth: number;
-        let speed = 25;
+        const speed = 25;
         let startTime: number;
         let animationFrameId: number;
         let isResizing = false;
