@@ -192,7 +192,7 @@ body {
   background-size: 1200px;
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 
 @media (max-width: 1023px) {
@@ -330,3 +330,99 @@ body {
 .custom-scrollbar {
   scrollbar-gutter: stable;
 }
+
+
+
+/* ===== ANIMATE PROFESSIONAL TITLES - ABOUT SECTION ===== */
+@keyframes faded0 {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animated-text-0 {
+  animation: faded0 6s ease-in-out infinite;
+}
+
+@keyframes faded1 {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animated-text-1 {
+  animation: faded1 6s ease-in-out infinite;
+}
+
+@keyframes faded2 {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animated-text-2 {
+  animation: faded2 6s ease-in-out infinite;
+}
+
+
+
+/* ===== ABOUT SECTION BACKGROUND ===== */
+#about {
+  z-index: 1;
+  background-image: url('/background-about.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  #about {
+    background-image: url('/background-about-mobile.png');
+  }
+}
+
+/* @media (max-width: 767px) {
+  #about {
+    transform: scaleY(-1);
+  }
+
+  #about>* {
+    transform: scaleY(-1);
+  }
+} */

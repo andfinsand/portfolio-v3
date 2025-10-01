@@ -2,6 +2,7 @@ import Banner from "./Banner";
 import ProjectCard from "./ProjectCard";
 import SkillsCarousel from "./SkillsCarousel";
 import { projectsData } from "../data/projects";
+import About from "./About";
 
 export default function Center() {
     return (
@@ -26,6 +27,7 @@ export default function Center() {
                     />
                 ))}
             </div>
+            <About />
         </div>
     );
 }

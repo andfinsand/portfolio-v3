@@ -28,15 +28,15 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
 
     // Bottom row - Backend/Tools (right to left)
     const [bottomItems, setBottomItems] = useState([
-        { thumbnail: "/logo-python.webp", alt: "Python logo" },
         { thumbnail: "/logo-django.webp", alt: "Django logo" },
         { thumbnail: "/logo-flask.webp", alt: "Flask logo" },
         { thumbnail: "/logo-mongodb.webp", alt: "MongoDB logo" },
-        { thumbnail: "/logo-docker.webp", alt: "Docker logo" },
         { thumbnail: "/logo-git.webp", alt: "Git logo" },
         { thumbnail: "/logo-stripe.webp", alt: "Stripe logo" },
-        { thumbnail: "/logo-sanity.webp", alt: "Sanity logo" },
         { thumbnail: "/logo-wordpress.webp", alt: "WordPress logo" },
+        { thumbnail: "/logo-sanity.webp", alt: "Sanity logo" },
+        { thumbnail: "/logo-docker.webp", alt: "Docker logo" },
+        { thumbnail: "/logo-python.webp", alt: "Python logo" },
     ]);
 
     // Skills carousel animation
