@@ -411,9 +411,9 @@ body {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 639px) {
   #about {
-    background-image: url('/background-about-mobile.png');
+    background-image: url('/background-about-mobile2.png');
   }
 }
 
