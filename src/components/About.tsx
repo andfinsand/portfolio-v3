@@ -175,7 +175,7 @@ export default function About() {
                         <div className="relative w-[250px] h-[250px] md:w-[480px] md:h-[480px]">
                             {/* Gradient background circle */}
                             <div
-                                className="absolute block md:hidden inset-0 rounded-full bg-gradient-to-br from-[#0a0a0a] from-5% to-[#08060D] to-55% border-2 border-white/5"
+                                className="absolute block md:hidden inset-0 rounded-full bg-gradient-to-br from-[#0a0a0a] from-5% to-[#08060D] to-55% border border-white/5"
 
                             />
                             {/* Headshot image */}
@@ -184,6 +184,8 @@ export default function About() {
                                 alt="Headshot of Andrew Finsand"
                                 width={1931}
                                 height={1931}
+                                quality={95}
+                                sizes="900px"
                                 className="relative rounded-full md:rounded-none md:rounded-br-3xl xl:rounded-br-none w-[250px] h-[250px] md:w-[450px] md:h-[450px]"
                                 priority
                             />
