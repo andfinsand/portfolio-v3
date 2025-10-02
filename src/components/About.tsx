@@ -36,7 +36,7 @@ export default function About() {
 
     return (
         <>
-            <div id="about" className="relative flex justify-center items-center overflow-hidden border border-white/10 rounded-3xl max-w-[1200px] w-full h-full md:px-12 py-12 md:py-16">
+            <div id="about" className="relative flex justify-center items-center overflow-hidden border-2 border-white/10 rounded-3xl max-w-[1200px] w-full h-full md:px-12 py-12 md:py-16">
 
                 {/* About container including headshot */}
                 <div className="flex flex-col md:flex-row justify-center md:justify-between items-center w-full text-[#E7E7E7] gap-10 md:gap-12 px-5 lg:px-12">
@@ -166,20 +166,28 @@ export default function About() {
 
                     {/* Headshot */}
                     <div
-                        data-aos="fade-left"
+                        // data-aos="fade-left"
                         data-aos-duration="700"
                         data-aos-once="true"
                         data-aos-delay="300"
-                        className="order-1 md:order-2 flex-shrink-0 md:absolute md:bottom-0 md:right-0 xl:right-16"
+                        className="order-1 md:order-2 flex-shrink-0 md:absolute -bottom-8 md:-right-8 xl:right-8"
                     >
-                        <Image
-                            src="/headshot.png"
-                            alt="Headshot of Andrew Finsand"
-                            width={797}
-                            height={797}
-                            className="rounded-full md:rounded-none md:rounded-br-3xl xl:rounded-br-none ring-2 md:ring-0 ring-purple-400/20 w-[250px] h-[250px] md:w-[480px] md:h-[480px]"
-                            priority
-                        />
+                        <div className="relative w-[250px] h-[250px] md:w-[480px] md:h-[480px]">
+                            {/* Gradient background circle */}
+                            <div
+                                className="absolute block md:hidden inset-0 rounded-full  bg-gradient-to-br from-[#0a0a0a] from-5% to-[#08060D] to-55% border-2 border-white/5"
+
+                            />
+                            {/* Headshot image */}
+                            <Image
+                                src="/headshot.png"
+                                alt="Headshot of Andrew Finsand"
+                                width={1931}
+                                height={1931}
+                                className="relative rounded-full md:rounded-none md:rounded-br-3xl xl:rounded-br-none w-[250px] h-[250px] md:w-[450px] md:h-[450px]"
+                                priority
+                            />
+                        </div>
                     </div>
 
                     {/* Content shift placeholder for headshot */}
