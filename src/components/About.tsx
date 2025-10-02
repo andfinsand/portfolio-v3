@@ -36,7 +36,7 @@ export default function About() {
 
     return (
         <>
-            <div id="about" className="relative flex justify-center items-center overflow-hidden border-2 border-white/10 rounded-3xl max-w-[1200px] w-full h-full md:px-12 py-12 md:py-16">
+            <div id="about" className="relative flex justify-center items-center overflow-hidden border border-white/5 rounded-3xl max-w-[1200px] w-full h-full md:px-12 py-12 md:py-16">
 
                 {/* About container including headshot */}
                 <div className="flex flex-col md:flex-row justify-center md:justify-between items-center w-full text-[#E7E7E7] gap-10 md:gap-12 px-5 lg:px-12">
@@ -175,7 +175,7 @@ export default function About() {
                         <div className="relative w-[250px] h-[250px] md:w-[480px] md:h-[480px]">
                             {/* Gradient background circle */}
                             <div
-                                className="absolute block md:hidden inset-0 rounded-full  bg-gradient-to-br from-[#0a0a0a] from-5% to-[#08060D] to-55% border-2 border-white/5"
+                                className="absolute block md:hidden inset-0 rounded-full bg-gradient-to-br from-[#0a0a0a] from-5% to-[#08060D] to-55% border-2 border-white/5"
 
                             />
                             {/* Headshot image */}
