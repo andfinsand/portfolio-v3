@@ -5,16 +5,18 @@ import AOSProvider from "@/components/AOSProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  style: ["normal"],
   variable: "--font-poppins",
+  display: 'swap',
 });
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["400", "500"],
+  style: ["normal"],
   variable: "--font-roboto-condensed",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -31,11 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Preload background images */}
-        <link rel="preload" fetchPriority="high" href="/background-hero.webp" as="image" />
-        {/* <link rel="preload" href="/foreground.webp" as="image" /> */}
-      </head>
+      {/* Preload background images */}
+      <link rel="preload" fetchPriority="high" href="/background-hero.webp" as="image" />
+      {/* <link rel="preload" href="/foreground.webp" as="image" /> */}
       <body
         className={`${poppins.variable} ${robotoCondensed.variable} antialiased`}
       >

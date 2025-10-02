@@ -166,7 +166,7 @@ export default function About() {
 
                     {/* Headshot */}
                     <div
-                        // data-aos="fade-left"
+                        data-aos="fade-left"
                         data-aos-duration="700"
                         data-aos-once="true"
                         data-aos-delay="300"
@@ -180,12 +180,12 @@ export default function About() {
                             />
                             {/* Headshot image */}
                             <Image
-                                src="/headshot.png"
+                                src="/headshot.webp"
                                 alt="Headshot of Andrew Finsand"
-                                width={1931}
-                                height={1931}
+                                width={480}
+                                height={480}
                                 quality={95}
-                                sizes="900px"
+                                sizes="(max-width: 768px) 250px, 480px"
                                 className="relative rounded-full md:rounded-none md:rounded-br-3xl xl:rounded-br-none w-[250px] h-[250px] md:w-[450px] md:h-[450px]"
                                 priority
                             />

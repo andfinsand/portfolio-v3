@@ -107,8 +107,9 @@ export default function ProjectCard({ name, subtitle, thumbnail, demo, projectUr
                         <Image
                             src={thumbnail}
                             alt="Project logo"
-                            width={1200}
-                            height={1029}
+                            width={548}
+                            height={475}
+                            sizes="(max-width: 768px) 100vw, 548px"
                             className="absolute inset-0 object-cover h-[calc(80%+5px)] md:h-[calc(80%+17px)] rounded-2xl w-full"
                         />
                     </a>

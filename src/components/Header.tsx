@@ -9,9 +9,11 @@ export default function Header() {
                 <Image
                     src="/af-logo-white-gradient.webp"
                     alt="Andrew Finsand logo"
-                    width={437}
-                    height={324}
+                    width={40}
+                    height={30}
                     priority={true}
+                    fetchPriority="high"
+                    sizes="(max-width: 640px) 32px, 40px"
                     className="w-8 sm:w-10 mx-5 sm:mx-7 xl:mx-9 my-7"
                 />
             </div>
@@ -30,9 +32,8 @@ export default function Header() {
                         src="/linkedin.svg"
                         alt="Linkedin icon"
                         title="View LinkedIn profile"
-                        width={100}
-                        height={100}
-                        priority={true}
+                        width={16}
+                        height={16}
                         className="self-center brightness-[1] w-[16px] group-hover:brightness-0 transition-colors duration-200"
                     />
                 </a>
@@ -47,9 +48,8 @@ export default function Header() {
                         src="/github.svg"
                         alt="Github icon"
                         title="View GitHub profile"
-                        width={100}
-                        height={100}
-                        priority={true}
+                        width={16}
+                        height={16}
                         className="self-center brightness-[1] w-[16px] mr-0.5 group-hover:brightness-0 duration-200"
                     />
                 </a>
@@ -64,9 +64,8 @@ export default function Header() {
                     <Image
                         src="/email.svg"
                         alt="Email icon"
-                        width={100}
-                        height={100}
-                        priority={true}
+                        width={16}
+                        height={16}
                         className="self-center brightness-[1] w-[16px] group-hover:brightness-0 duration-200"
                     />
                 </a>

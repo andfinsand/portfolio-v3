@@ -188,7 +188,7 @@ body {
 /* ===== BANNER CONTENT ===== */
 #banner {
   z-index: 1;
-  background-image: url("/background-banner-extend.webp");
+  background-image: url("/background-banner.webp");
   background-size: 1200px;
   background-position: center;
   background-attachment: fixed;
@@ -405,7 +405,7 @@ body {
 /* ===== ABOUT SECTION BACKGROUND ===== */
 #about {
   z-index: 1;
-  background-image: url('/background-about.png');
+  background-image: url('/background-about.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -413,7 +413,7 @@ body {
 
 @media (max-width: 639px) {
   #about {
-    background-image: url('/background-about-mobile2.png');
+    background-image: url('/background-about-mobile.webp');
   }
 }
 
