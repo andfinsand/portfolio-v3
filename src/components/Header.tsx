@@ -29,7 +29,7 @@ export default function Header() {
 
                 >
                     <Image
-                        src="/linkedin.svg"
+                        src="/icon-linkedin.svg"
                         alt="Linkedin icon"
                         title="View LinkedIn profile"
                         width={16}
@@ -45,7 +45,7 @@ export default function Header() {
                     className="group flex justify-center w-[35px] h-[35px] hover:bg-[#E7E7E7] hover:rounded-full hover:p-1 duration-200"
                 >
                     <Image
-                        src="/github.svg"
+                        src="/icon-github.svg"
                         alt="Github icon"
                         title="View GitHub profile"
                         width={16}
@@ -62,7 +62,7 @@ export default function Header() {
 
                 >
                     <Image
-                        src="/email.svg"
+                        src="/icon-email.svg"
                         alt="Email icon"
                         width={16}
                         height={16}

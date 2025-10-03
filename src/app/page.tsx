@@ -6,12 +6,10 @@ import Center from "@/components/Center";
 export default function Home() {
   return (
     <main className="flex flex-col items-center overflow-hidden">
-      {/* <div id='background'></div> */}
       < Header />
       < Hero />
       < Divider />
       < Center />
     </main>
-
   );
 }

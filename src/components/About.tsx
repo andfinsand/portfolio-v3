@@ -111,56 +111,62 @@ export default function About() {
                             className="flex gap-8 mt-2"
                         >
                             {/* Linkedin */}
-                            <a
-                                href="https://www.linkedin.com/in/andrewfinsand/"
-                                target="_blank"
-                                className="group flex justify-center"
+                            <div className="group cursor-pointer">
+                                <a
+                                    href="https://www.linkedin.com/in/andrewfinsand/"
+                                    target="_blank"
+                                    className="flex justify-center group-hover:-translate-y-1.5 duration-200"
 
-                            >
-                                <Image
-                                    src="/linkedin.svg"
-                                    alt="Linkedin icon"
-                                    title="View LinkedIn profile"
-                                    width={100}
-                                    height={100}
-                                    priority={true}
-                                    className="self-center w-5.5 h-5.5"
-                                />
-                            </a>
+                                >
+                                    <Image
+                                        src="/icon-linkedin.svg"
+                                        alt="Linkedin icon"
+                                        title="View LinkedIn profile"
+                                        width={100}
+                                        height={100}
+                                        priority={true}
+                                        className="self-center w-5.5 h-5.5 group-hover:opacity-50 duration-200"
+                                    />
+                                </a>
+                            </div>
 
                             {/* Github */}
-                            <a
-                                href="https://github.com/andfinsand"
-                                target="_blank"
-                                className="group flex justify-center"
-                            >
-                                <Image
-                                    src="/github.svg"
-                                    alt="Github icon"
-                                    title="View GitHub profile"
-                                    width={100}
-                                    height={100}
-                                    priority={true}
-                                    className="self-center w-5.5 h-5.5"
-                                />
-                            </a>
+                            <div className="group cursor-pointer">
+                                <a
+                                    href="https://github.com/andfinsand"
+                                    target="_blank"
+                                    className="flex justify-center group-hover:-translate-y-1.5 duration-200"
+                                >
+                                    <Image
+                                        src="/icon-github.svg"
+                                        alt="Github icon"
+                                        title="View GitHub profile"
+                                        width={100}
+                                        height={100}
+                                        priority={true}
+                                        className="self-center w-5.5 h-5.5 group-hover:opacity-50 duration-200"
+                                    />
+                                </a>
+                            </div>
 
                             {/* Email */}
-                            <a
-                                href="mailto:andfinsand@gmail.com"
-                                title="Contact me"
-                                className="group flex justify-center"
+                            <div className="group cursor-pointer">
+                                <a
+                                    href="mailto:andfinsand@gmail.com"
+                                    title="Contact me"
+                                    className="flex justify-center group-hover:-translate-y-1.5 duration-200"
 
-                            >
-                                <Image
-                                    src="/email.svg"
-                                    alt="Email icon"
-                                    width={100}
-                                    height={100}
-                                    priority={true}
-                                    className="self-center w-5.5 h-5.5"
-                                />
-                            </a>
+                                >
+                                    <Image
+                                        src="/icon-email.svg"
+                                        alt="Email icon"
+                                        width={100}
+                                        height={100}
+                                        priority={true}
+                                        className="self-center w-5.5 h-5.5 group-hover:opacity-50 duration-200"
+                                    />
+                                </a>
+                            </div>
                         </div>
                     </div>
 

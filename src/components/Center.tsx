@@ -1,12 +1,19 @@
+"use client"
+
 import Banner from "./Banner";
 import ProjectCard from "./ProjectCard";
 import SkillsCarousel from "./SkillsCarousel";
 import { projectsData } from "../data/projects";
 import About from "./About";
+import Image from "next/image";
 
 export default function Center() {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <div className="flex flex-col items-center w-full h-fit gap-16 sm:gap-24 lg:gap-32 px-5 lg:px-14 pt-2 pb-16 sm:py-20 lg:py-36 xl:py-40">
+        <div className="flex flex-col items-center w-full h-fit gap-16 sm:gap-24 lg:gap-32 px-5 lg:px-14 pb-9 sm:pb-12 pt-2 sm:pt-20 lg:pt-36 xl:pt-40">
             < Banner />
             < SkillsCarousel isMobile={false} />
             {/* Projects Section */}
@@ -28,6 +35,24 @@ export default function Center() {
                 ))}
             </div>
             <About />
+
+            {/* Back to Top Button */}
+            <button
+                onClick={scrollToTop}
+                className="group flex flex-col items-center gap-2 cursor-pointer"
+                aria-label="Back to top"
+            >
+                <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/5 transition-all duration-200 group-hover:bg-white/10 group-hover:-translate-y-1.5">
+                    <Image
+                        src="/icon-chevron-double-up.svg"
+                        alt="Back to top icon"
+                        width={32}
+                        height={32}
+                        className="w-7 h-7 opacity-70 group-hover:opacity-100 duration-200"
+                    />
+                </div>
+                <span className="text-[#E7E7E7]/70 group-hover:text-[#E7E7E7] duration-200 text-sm">Back to Top</span>
+            </button>
         </div>
     );
 }

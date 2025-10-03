@@ -21,7 +21,7 @@ const robotoCondensed = Roboto_Condensed({
 
 export const metadata: Metadata = {
   title: "Andrew Finsand | Software Developer Portfolio",
-  description: "Andrew Finsand's Full-Stack Developer and UI/UX Designer portfolio. Specializing in Next.js, React, Python, and AI integration. Building scalable web applications, e-commerce platforms, and creative digital experiences.",
+  description: "Andrew Finsand's Full-Stack Developer and UI/UX Designer portfolio. Specializing in Next.js, React, Python, and AI integration. Building scalable web applications, e-commerce platforms, and creative digital solutions.",
   keywords: "Andrew Finsand, UI/UX Designer, Full-Stack Developer, Next.js, React, Python, JavaScript, AI integration, OpenAI API, Supabase, Docker, CI/CD, Tailwind CSS, MongoDB, Flask, DevOps, e-commerce development, web development, portfolio",
   authors: [{ name: "Andrew Finsand" }],
 };
@@ -33,9 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Preload background images */}
+      {/* Preload background image(s) */}
       <link rel="preload" fetchPriority="high" href="/background-hero.webp" as="image" />
-      {/* <link rel="preload" href="/foreground.webp" as="image" /> */}
+      {/* <link rel="preload" fetchPriority="high" href="/foreground.webp" as="image" /> */}
       <body
         className={`${poppins.variable} ${robotoCondensed.variable} antialiased`}
       >

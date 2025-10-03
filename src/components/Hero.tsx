@@ -80,7 +80,7 @@ export default function Hero() {
 
                         >
                             <Image
-                                src="/external-link.svg"
+                                src="/icon-external-link.svg"
                                 alt="Open external link icon"
                                 width={100}
                                 height={100}

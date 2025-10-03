@@ -38,7 +38,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                 {name}
 
                                 <Image
-                                    src="/external-link.svg"
+                                    src="/icon-external-link.svg"
                                     alt="Open external link icon"
                                     width={100}
                                     height={100}
@@ -57,7 +57,7 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                         target="_blank"
                                     >
                                         <Image
-                                            src="/github-project.svg"
+                                            src="/icon-github-project.svg"
                                             alt="Github logo"
                                             width={100}
                                             height={100}
