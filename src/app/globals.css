@@ -178,7 +178,7 @@ body {
 @media (max-width: 555px) {
   #background {
     background-image: url("/background-hero-mobile.webp");
-    background-size: 190%;
+    background-size: 170%;
     background-repeat: no-repeat;
   }
 }
@@ -186,7 +186,7 @@ body {
 @media (max-width: 555px) {
   #foreground {
     background-image: url("/foreground-hero-mobile.webp");
-    background-size: 190%;
+    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center;
   }
