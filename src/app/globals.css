@@ -130,6 +130,16 @@ body {
   }
 }
 
+@keyframes foregroundFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 
 
@@ -147,6 +157,39 @@ body {
   /* For animation on load */
   opacity: 0;
   animation: heroBgZoomIn 1.5s ease-out 0.1s forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
+}
+
+#foreground {
+  z-index: 1;
+  background-image: none;
+  background-image: url("/foreground-hero.webp");
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  opacity: 0;
+  animation: foregroundFadeIn 0.3s ease-out 2.5s forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
+}
+
+@media (max-width: 555px) {
+  #background {
+    background-image: url("/background-hero-mobile.webp");
+    background-size: 190%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 555px) {
+  #foreground {
+    background-image: url("/foreground-hero-mobile.webp");
+    background-size: 190%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 /* Divider with fade */

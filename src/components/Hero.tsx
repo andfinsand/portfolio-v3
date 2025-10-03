@@ -9,7 +9,7 @@ export default function Hero() {
 
     useEffect(() => {
         const parallaxSpeed = 0.4;
-        const fadeOutDistance = 400;
+        const fadeOutDistance = 500;
 
         const handleScroll = () => {
             const element = parallaxRef.current;
@@ -18,7 +18,7 @@ export default function Hero() {
                 // Parallax animation
                 const newYOffset = scrollY * parallaxSpeed;
                 // Start fading only AFTER % of the fadeOutDistance
-                const fadeStartPoint = fadeOutDistance * 0.4; // Adjust here
+                const fadeStartPoint = fadeOutDistance * 0.45; // Adjust here
                 const adjustedScrollY = Math.max(0, scrollY - fadeStartPoint);
                 const adjustedFadeDistance = fadeOutDistance - fadeStartPoint;
 
@@ -45,6 +45,9 @@ export default function Hero() {
                 {/* Background image */}
                 <div id="background"></div>
 
+                {/* Foreground layer */}
+                <div id="foreground"></div>
+
                 {/* Title */}
                 <div
                     ref={parallaxRef}
@@ -55,15 +58,11 @@ export default function Hero() {
                     }}
                 >
                     <h1
-                        // data-aos="fade-in"
-                        // data-aos-delay="1200"
                         className="hero-h1 text-center drop-shadow-[0_0_2px_rgba(231,231,231,.5)] text-4xl sm:text-5xl xl:text-6xl mb-2 xl:mb-4"
                     >
                         ANDREW FINSAND
                     </h1>
                     <h2
-                        // data-aos="fade-in"
-                        // data-aos-delay="1200"
                         className="hero-h2 text-center font-extralight text-xl sm:text-2xl xl:text-3xl mb-8 xl:mb-10"
                     >
                         Software Developer
