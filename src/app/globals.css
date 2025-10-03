@@ -172,6 +172,7 @@ body {
   background-position: center;
   pointer-events: none;
   opacity: 0;
+  /* Foreground has opacity delay to avoid visible layering on initial landing */
   animation: foregroundFadeIn 0.3s ease-out 2.5s forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
 }
 
