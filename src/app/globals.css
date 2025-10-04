@@ -153,7 +153,7 @@ body {
   left: 0;
   position: absolute;
   background-size: cover;
-  background-position: center;
+  background-position: 55% center;
   /* For animation on load */
   opacity: 0;
   animation: heroBgZoomIn 1.5s ease-out 0.1s forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
@@ -169,7 +169,7 @@ body {
   left: 0;
   position: absolute;
   background-size: cover;
-  background-position: center;
+  background-position: 55% center;
   pointer-events: none;
   opacity: 0;
   /* Foreground has opacity delay to avoid visible layering on initial landing */
@@ -180,6 +180,7 @@ body {
   #background {
     background-image: url("/background-hero-mobile.webp");
     background-size: 170%;
+    background-position: 55% center;
     background-repeat: no-repeat;
   }
 }
@@ -188,8 +189,8 @@ body {
   #foreground {
     background-image: url("/foreground-hero-mobile.webp");
     background-size: 170%;
+    background-position: 55% center;
     background-repeat: no-repeat;
-    background-position: center;
   }
 }
 
