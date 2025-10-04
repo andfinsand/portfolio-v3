@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   description: "Andrew Finsand's Full-Stack Developer and UI/UX Designer portfolio. Specializing in Next.js, React, Python, and AI integration. Building scalable web applications, e-commerce platforms, and creative digital solutions.",
   keywords: "Andrew Finsand, UI/UX Designer, Full-Stack Developer, Next.js, React, Python, JavaScript, AI integration, OpenAI API, Supabase, Docker, CI/CD, Tailwind CSS, MongoDB, Flask, DevOps, e-commerce development, web development, portfolio",
   authors: [{ name: "Andrew Finsand" }],
+  verification: {
+    google: "NaDSZfAj1DbjfdG6_tgPr7XvX2ar9z36JMEQPvjkcds",
+  },
+  alternates: {
+    canonical: "https://www.andrewfinsand.dev",
+  },
 };
 
 export default function RootLayout({
@@ -33,9 +39,43 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Preload background image(s) */}
-      <link rel="preload" fetchPriority="high" href="/background-hero.webp" as="image" />
-      {/* <link rel="preload" fetchPriority="high" href="/foreground.webp" as="image" /> */}
+      {/* Preload hero images responsively */}
+      {/* Background: Desktop */}
+      <link
+        rel="preload"
+        fetchPriority="high"
+        href="/background-hero.webp"
+        as="image"
+        media="(min-width: 556px)"
+        type="image/webp"
+      />
+      {/* Background: Mobile */}
+      <link
+        rel="preload"
+        fetchPriority="high"
+        href="/background-hero-mobile.webp"
+        as="image"
+        media="(max-width: 555px)"
+        type="image/webp"
+      />
+      {/* Foreground: Desktop */}
+      <link
+        rel="preload"
+        fetchPriority="high"
+        href="/foreground-hero.webp"
+        as="image"
+        media="(min-width: 556px)"
+        type="image/webp"
+      />
+      {/* Foreground: Mobile */}
+      <link
+        rel="preload"
+        fetchPriority="high"
+        href="/foreground-hero-mobile.webp"
+        as="image"
+        media="(max-width: 555px)"
+        type="image/webp"
+      />
       <body
         className={`${poppins.variable} ${robotoCondensed.variable} antialiased`}
       >
