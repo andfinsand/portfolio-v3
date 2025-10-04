@@ -3,17 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import SkillsCarouselImage from "./SkillsCarouselImage";
 
-type SkillsCarouselProps = {
-    isMobile: boolean;
-};
-
-export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
+export default function SkillsCarousel() {
     const topContainerRef = useRef<HTMLDivElement>(null);
     const bottomContainerRef = useRef<HTMLDivElement>(null);
     const [topTranslateX, setTopTranslateX] = useState(0);
     const [bottomTranslateX, setBottomTranslateX] = useState(0);
 
-    // Top row - Frontend/Design (left to right)
+    // Top row - Frontend/Design (animate from right to left)
     const [topItems, setTopItems] = useState([
         { thumbnail: "/logo-html.webp", alt: "HTML logo" },
         { thumbnail: "/logo-typescript.webp", alt: "TypeScript logo" },
@@ -26,7 +22,7 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
         { thumbnail: "/logo-css.webp", alt: "CSS logo" },
     ]);
 
-    // Bottom row - Backend/Tools (right to left)
+    // Bottom row - Backend/Tools (animate from left to right)
     const [bottomItems, setBottomItems] = useState([
         { thumbnail: "/logo-django.webp", alt: "Django logo" },
         { thumbnail: "/logo-flask.webp", alt: "Flask logo" },
@@ -39,8 +35,7 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
         { thumbnail: "/logo-python.webp", alt: "Python logo" },
     ]);
 
-    // Skills carousel animation
-    // NOTE: If actively adjusting the viewport width, the carousel will become jumpy. A browser refresh is required for a smooth effect.
+    // Infinite scrolling animation for skills with dynamic viewport resizing
     useEffect(() => {
         const topContainer = topContainerRef.current;
         const bottomContainer = bottomContainerRef.current;
@@ -162,12 +157,9 @@ export default function SkillsCarousel({ isMobile }: SkillsCarouselProps) {
         };
     }, []);
 
-    if (isMobile) {
-        return null;
-    }
-
     return (
         <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
+
             {/* Top Carousel - Left to Right */}
             <div className="carouselWrapper flex overflow-hidden w-full max-w-[1200px]">
                 <div

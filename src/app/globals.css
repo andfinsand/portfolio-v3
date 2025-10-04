@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 
+/*========================================
+  THEME CONFIGURATION
+  ========================================*/
 
-/* ===== THEME CONFIGURATION ===== */
 /* Add custom tailwind styling here */
 @theme {
   --breakpoint-3xl: 120rem;
@@ -16,11 +18,12 @@
 }
 
 
+/*========================================
+  CSS CUSTOM PROPERTIES
+  ========================================*/
 
-/* ===== CSS CUSTOM PROPERTIES / VARIABLES ===== */
 :root {
   --background: #0A0A0A;
-  /* --foreground: #171717; */
   --foreground: #C9C9C9;
 }
 
@@ -32,8 +35,10 @@
 }
 
 
+/*========================================
+  BASE STYLES
+  ========================================*/
 
-/* ===== BASE STYLES ===== */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -41,22 +46,10 @@ body {
 }
 
 
+/*========================================
+  ANIMATIONS / KEYFRAMES
+  ========================================*/
 
-/* ===== ANIMATIONS / KEYFRAMES ===== */
-/* Old - currently using bg zoom in below */
-@keyframes heroBgFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Current */
 @keyframes heroBgZoomIn {
   from {
     opacity: 0;
@@ -69,16 +62,6 @@ body {
   }
 }
 
-/* @keyframes heroTextFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-} */
-
 @keyframes heroTextFadeIn {
   from {
     opacity: 0;
@@ -89,20 +72,6 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes headerFadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-    /* Start 20px higher */
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    /* End at natural position */
   }
 }
 
@@ -141,9 +110,10 @@ body {
 }
 
 
+/*========================================
+  BACKGROUND + FOREGROUND
+  ========================================*/
 
-
-/* ===== BACKGROUND ===== */
 #background {
   z-index: -1;
   background-image: url("/background-hero.webp");
@@ -154,7 +124,7 @@ body {
   position: absolute;
   background-size: cover;
   background-position: 55% center;
-  /* For animation on load */
+  /* Animation on landing */
   opacity: 0;
   animation: heroBgZoomIn 1.5s ease-out 0.1s forwards, backgroundPulse 7s ease-in-out infinite 2.5s;
 }
@@ -194,14 +164,16 @@ body {
   }
 }
 
-/* Divider with fade */
+/* Divider with fade - between hero and banner */
 .bg-fade {
   background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 1));
 }
 
 
+/*========================================
+  HERO CONTENT
+  ========================================*/
 
-/* ===== HERO CONTENT ===== */
 .hero-h1,
 .hero-h2,
 .hero-button {
@@ -221,23 +193,16 @@ body {
 }
 
 
+/*========================================
+  BANNER CONTENT
+  ========================================*/
 
-/* ===== HEADER CONTENT ===== */
-/* .header-animation {
-  opacity: 0;
-  animation: headerFadeInDown 1.5s ease-out 500ms forwards;
-} */
-
-
-
-/* ===== BANNER CONTENT ===== */
 #banner {
   z-index: 1;
   background-image: url("/background-banner.webp");
   background-size: 1200px;
   background-position: center;
   background-attachment: fixed;
-  /* background-repeat: no-repeat; */
 }
 
 @media (max-width: 1023px) {
@@ -254,8 +219,10 @@ body {
 }
 
 
+/*========================================
+  BANNER TEXT REVEAL
+  ========================================*/
 
-/* ===== BANNER TEXT REVEAL ===== */
 [data-aos="reveal-text"] {
   position: relative;
 }
@@ -291,8 +258,10 @@ body {
 }
 
 
+/*========================================
+  GRADIENT TEXT
+  ========================================*/
 
-/* ===== GRADIENT TEXT ===== */
 .gradient-text-reverse {
   background-image: linear-gradient(to right, #6FB3FD, #8E40E6);
   -webkit-background-clip: text;
@@ -302,8 +271,10 @@ body {
 }
 
 
+/*========================================
+  SKILLS CAROUSEL
+  ========================================*/
 
-/* ===== SKILLS CAROUSEL ===== */
 .carouselWrapper {
   position: relative;
 }
@@ -325,14 +296,14 @@ body {
 
 .carouselWrapper::after {
   right: 0;
-
   background: linear-gradient(to left, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0));
 }
 
 
+/*========================================
+  PROJECT CARD CARET
+  ========================================*/
 
-
-/* ===== PROJECT CARD CARET ===== */
 .caret {
   display: inline-block;
   width: 0;
@@ -342,7 +313,6 @@ body {
   border-bottom: 9px solid;
   margin-bottom: 1px;
   color: #E7E7E7;
-  transition: color 100ms;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -352,8 +322,10 @@ body {
 }
 
 
+/*========================================
+  SCROLL BAR
+  ========================================*/
 
-/* ===== SCROLL BAR ===== */
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -377,8 +349,10 @@ body {
 }
 
 
+/*===========================================
+  ABOUT SECTION - ANIMATE PROFESSIONAL TITLES
+  ===========================================*/
 
-/* ===== ANIMATE PROFESSIONAL TITLES - ABOUT SECTION ===== */
 @keyframes faded0 {
   0% {
     opacity: 0;
@@ -446,8 +420,10 @@ body {
 }
 
 
+/*========================================
+  ABOUT SECTION BACKGROUND
+  ========================================*/
 
-/* ===== ABOUT SECTION BACKGROUND ===== */
 #about {
   z-index: 1;
   background-image: url('/background-about.webp');
@@ -461,13 +437,3 @@ body {
     background-image: url('/background-about-mobile.webp');
   }
 }
-
-/* @media (max-width: 767px) {
-  #about {
-    transform: scaleY(-1);
-  }
-
-  #about>* {
-    transform: scaleY(-1);
-  }
-} */

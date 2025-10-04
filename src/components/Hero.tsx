@@ -51,20 +51,16 @@ export default function Hero() {
                 {/* Title */}
                 <div
                     ref={parallaxRef}
-                    className="parallax-container relative text-[#E7E7E7]"
+                    className="relative text-[#E7E7E7]"
                     style={{
                         transform: "translateY(calc(var(--offset) + var(--scroll-offset, 0px)))",
                         willChange: "transform, opacity" // performance optimization hint for the browser
                     }}
                 >
-                    <h1
-                        className="hero-h1 text-center drop-shadow-[0_0_2px_rgba(231,231,231,.5)] text-4xl sm:text-5xl xl:text-6xl mb-2 xl:mb-4"
-                    >
+                    <h1 className="hero-h1 text-center drop-shadow-[0_0_2px_rgba(231,231,231,.5)] text-4xl sm:text-5xl xl:text-6xl mb-2 xl:mb-4">
                         ANDREW FINSAND
                     </h1>
-                    <h2
-                        className="hero-h2 text-center font-extralight text-xl sm:text-2xl xl:text-3xl mb-8 xl:mb-10"
-                    >
+                    <h2 className="hero-h2 text-center font-extralight text-xl sm:text-2xl xl:text-3xl mb-8 xl:mb-10">
                         Software Developer
                     </h2>
 
@@ -73,16 +69,16 @@ export default function Hero() {
                         <a
                             href="resume.pdf"
                             title="Open resume in new tab"
-                            rel="noopener noreferrer"
                             target="_blank"
-                            className="group flex border-1 xl:border-2 border-[#9b9b9b] rounded-full w-fit gap-1 px-4 py-2 hover:bg-white/15 hover:backdrop-blur-sm duration-200"
+                            rel="noopener noreferrer"
+                            className="flex border-1 xl:border-2 border-[#9b9b9b] rounded-full w-fit gap-1 px-4 py-2 hover:bg-white/15 hover:backdrop-blur-sm duration-200"
 
                         >
                             <Image
                                 src="/icon-external-link.svg"
                                 alt="Open external link icon"
-                                width={100}
-                                height={100}
+                                width={16}
+                                height={16}
                                 priority={true}
                                 className="w-4 xl:w-5"
                             />

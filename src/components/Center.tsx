@@ -1,11 +1,11 @@
 "use client"
 
-import Banner from "./Banner";
-import ProjectCard from "./ProjectCard";
-import SkillsCarousel from "./SkillsCarousel";
-import { projectsData } from "../data/projects";
-import About from "./About";
 import Image from "next/image";
+import Banner from "./Banner";
+import SkillsCarousel from "./SkillsCarousel";
+import ProjectCard from "./ProjectCard";
+import About from "./About";
+import { projectsData } from "../data/projects";
 
 export default function Center() {
     const scrollToTop = () => {
@@ -13,9 +13,10 @@ export default function Center() {
     };
 
     return (
-        <div className="flex flex-col items-center w-full h-fit gap-16 sm:gap-24 lg:gap-32 px-5 lg:px-14 pb-9 sm:pb-12 pt-2 sm:pt-20 lg:pt-36 xl:pt-40">
+        <div className="flex flex-col items-center w-full h-fit gap-16 sm:gap-24 lg:gap-32 px-5 lg:px-14 pb-8 sm:pb-10 pt-2 sm:pt-20 lg:pt-36 xl:pt-40">
             < Banner />
-            < SkillsCarousel isMobile={false} />
+            < SkillsCarousel />
+
             {/* Projects Section */}
             <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full max-w-[1200px]">
                 {projectsData.map((project) => (
@@ -51,7 +52,7 @@ export default function Center() {
                         className="w-7 h-7 opacity-70 group-hover:opacity-100 duration-200"
                     />
                 </div>
-                <span className="text-[#E7E7E7]/70 group-hover:text-[#E7E7E7] duration-200 text-sm">Back to Top</span>
+                <span className="text-sm text-[#E7E7E7]/70 group-hover:text-[#E7E7E7] duration-200">Back to Top</span>
             </button>
         </div>
     );

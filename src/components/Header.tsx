@@ -10,7 +10,7 @@ export default function Header() {
                     src="/af-logo-white-gradient.webp"
                     alt="Andrew Finsand logo"
                     width={40}
-                    height={30}
+                    height={40}
                     priority={true}
                     fetchPriority="high"
                     sizes="(max-width: 640px) 32px, 40px"
@@ -25,16 +25,17 @@ export default function Header() {
                 <a
                     href="https://www.linkedin.com/in/andrewfinsand/"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    title="View LinkedIn profile"
                     className="group flex justify-center w-[35px] h-[35px] hover:bg-[#E7E7E7] hover:rounded-full hover:p-2 duration-200"
 
                 >
                     <Image
                         src="/icon-linkedin.svg"
-                        alt="Linkedin icon"
-                        title="View LinkedIn profile"
+                        alt="LinkedIn icon"
                         width={16}
                         height={16}
-                        className="self-center brightness-[1] w-[16px] group-hover:brightness-0 transition-colors duration-200"
+                        className="self-center w-[16px] brightness-[1] group-hover:brightness-0 transition-colors duration-200"
                     />
                 </a>
 
@@ -42,12 +43,13 @@ export default function Header() {
                 <a
                     href="https://github.com/andfinsand"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    title="View GitHub profile"
                     className="group flex justify-center w-[35px] h-[35px] hover:bg-[#E7E7E7] hover:rounded-full hover:p-1 duration-200"
                 >
                     <Image
                         src="/icon-github.svg"
                         alt="Github icon"
-                        title="View GitHub profile"
                         width={16}
                         height={16}
                         className="self-center brightness-[1] w-[16px] mr-0.5 group-hover:brightness-0 duration-200"
@@ -75,7 +77,6 @@ export default function Header() {
                     <div className="w-1.5 xl:w-2 h-1.5 xl:h-2 bg-[#01D008] rounded-full"></div>
                     <p className="text-[11px] xl:text-xs">Available for Work</p>
                 </div>
-
             </div>
         </div>
     );

@@ -17,23 +17,6 @@ export default function About() {
         return () => clearInterval(interval);
     }, [titles.length]);
 
-    // Background parallax effect
-    // useEffect(() => {
-    //     document.addEventListener("scroll", function () {
-    //         let scrollPosition = window.scrollY;
-    //         let parallaxElement = document.getElementById("about");
-    //         let speed = 0.5;
-
-    //         if (parallaxElement) {
-    //             parallaxElement.style.backgroundPosition = `center ${-scrollPosition * speed}px`;
-    //         }
-    //     });
-
-    //     return () => {
-    //         document.removeEventListener("scroll", function () { });
-    //     };
-    // }, []);
-
     return (
         <>
             <div id="about" className="relative flex justify-center items-center overflow-hidden border border-white/5 rounded-3xl max-w-[1200px] w-full h-full md:px-12 py-12 md:py-16">
@@ -42,9 +25,9 @@ export default function About() {
                 <div className="flex flex-col md:flex-row justify-center md:justify-between items-center w-full text-[#E7E7E7] gap-10 md:gap-12 px-5 lg:px-12">
 
                     {/* Content - text container and socials */}
-                    <div className="flex flex-col order-2 md:order-1 gap-8 max-w-[600px] w-full ">
+                    <div className="flex flex-col order-2 md:order-1 gap-8 w-full max-w-[600px]">
 
-                        {/* Text container */}
+                        {/* Text only container */}
                         <div className="flex flex-col gap-6">
 
                             {/* Intro - fades in first */}
@@ -114,14 +97,13 @@ export default function About() {
                             <a
                                 href="https://www.linkedin.com/in/andrewfinsand/"
                                 target="_blank"
+                                title="View LinkedIn profile"
                                 className="group flex justify-center"
-
                             >
                                 <div className="group-hover:-translate-y-1.5 group-hover:scale-110 duration-200">
                                     <Image
                                         src="/icon-linkedin.svg"
-                                        alt="Linkedin icon"
-                                        title="View LinkedIn profile"
+                                        alt="LinkedIn icon"
                                         width={24}
                                         height={24}
                                         className="self-center w-5.5 h-5.5 group-hover:opacity-50 duration-200"
@@ -129,18 +111,17 @@ export default function About() {
                                 </div>
                             </a>
 
-
                             {/* Github */}
                             <a
                                 href="https://github.com/andfinsand"
                                 target="_blank"
+                                title="View GitHub profile"
                                 className="group flex justify-center"
                             >
                                 <div className="group-hover:-translate-y-1.5 group-hover:scale-110 duration-200">
                                     <Image
                                         src="/icon-github.svg"
                                         alt="Github icon"
-                                        title="View GitHub profile"
                                         width={24}
                                         height={24}
                                         className="self-center w-5.5 h-5.5 group-hover:opacity-50 duration-200"
@@ -148,13 +129,11 @@ export default function About() {
                                 </div>
                             </a>
 
-
                             {/* Email */}
                             <a
                                 href="mailto:andfinsand@gmail.com"
                                 title="Contact me"
                                 className="group flex justify-center"
-
                             >
                                 <div className="group-hover:-translate-y-1.5 group-hover:scale-110 duration-200">
                                     <Image
@@ -166,7 +145,6 @@ export default function About() {
                                     />
                                 </div>
                             </a>
-
                         </div>
                     </div>
 
@@ -179,10 +157,9 @@ export default function About() {
                         className="order-1 md:order-2 flex-shrink-0 md:absolute -bottom-8 md:-right-8 xl:right-8"
                     >
                         <div className="relative w-[250px] h-[250px] md:w-[480px] md:h-[480px]">
-                            {/* Gradient background circle */}
+                            {/* Headshot circular container */}
                             <div
                                 className="absolute block md:hidden inset-0 rounded-full bg-gradient-to-br from-[#0a0a0a] from-5% to-[#08060D] to-55% border border-white/5"
-
                             />
                             {/* Headshot image */}
                             <Image
@@ -193,14 +170,12 @@ export default function About() {
                                 quality={95}
                                 sizes="(max-width: 768px) 250px, 480px"
                                 className="relative rounded-full md:rounded-none md:rounded-br-3xl xl:rounded-br-none w-[250px] h-[250px] md:w-[450px] md:h-[450px]"
-                                priority
                             />
                         </div>
                     </div>
 
-                    {/* Content shift placeholder for headshot */}
-                    <div className="hidden md:flex order-1 md:w-[65%] lg:w-[45%]">
-                    </div>
+                    {/* Content shift placeholder for headshot (Tablet/Desktop view only) */}
+                    <div className="hidden md:flex order-1 md:w-[65%] lg:w-[45%]"></div>
 
                 </div>
             </div>

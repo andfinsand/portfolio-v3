@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ProjectTechBadge from "./ProjectTechBadge";
-// import SliderImage from "./SliderImage";
 
 type ProjectSliderProps = {
     showSlide: boolean;
@@ -26,13 +25,15 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                     {/* Wrapper for footer head - project name, subtitle, github, and expand button */}
                     <div className="flex flex-col justify-center self-center gap-0.5 h-[67.5px] px-5 sm:px-7">
 
-                        {/* Top footer container - name, github, and expand button */}
+                        {/* Top of footer container - name, github, and expand button */}
                         <div className="flex justify-between">
+
+                            {/* Project name */}
                             <a
                                 href={projectUrl}
                                 title="Visit live site"
                                 target="_blank"
-                                className="group flex flex-row w-auto gap-1.5 tracking-wide font-medium hover:text-white/50 duration-100"
+                                className="group flex flex-row w-auto gap-0.5 tracking-wide font-medium hover:text-white/50 duration-100"
                             >
 
                                 {name}
@@ -40,10 +41,10 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                 <Image
                                     src="/icon-external-link.svg"
                                     alt="Open external link icon"
-                                    width={100}
-                                    height={100}
+                                    width={20}
+                                    height={20}
                                     priority={true}
-                                    className="w-4 xl:w-5 group-hover:brightness-[.5] duration-100"
+                                    className="w-3.5 xl:w-5 group-hover:brightness-[.5] duration-100 mb-1"
                                 />
                             </a>
 
@@ -59,8 +60,8 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                         <Image
                                             src="/icon-github-project.svg"
                                             alt="Github logo"
-                                            width={100}
-                                            height={100}
+                                            width={24}
+                                            height={24}
                                             className="w-6 hover:brightness-[.5] duration-100"
                                         />
                                     </a>
@@ -74,23 +75,19 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                     type="button"
                                     aria-expanded={showSlide}
                                     className="group flex justify-center cursor-pointer border-2 border-[#E7E7E7] rounded-[4px] w-6 h-[23.5px] hover:bg-[#E7E7E7] duration-100">
-                                    <span aria-hidden="true" className={`caret self-center transition-transform duration-700 ${showSlide ? "transform rotate-180" : ""}`}></span>
+                                    <span aria-hidden="true" className={`caret self-center transition-all duration-100 ${showSlide ? "transform rotate-180" : ""}`}></span>
                                 </button>
                             </div>
                         </div>
 
-                        {/* Bottom footer container - Subtitle */}
+                        {/* Bottom of footer container - Subtitle */}
                         <div className="text-sm text-[#A1A1AA]">
                             {subtitle}
                         </div>
                     </div>
 
-                    {/* Divider between footer head and slider content */}
-                    {/* <div className="border-t-[1.5px] border-white/10 mx-5 sm:mx-7"></div> */}
-
                     {/* Slider main content */}
                     <div className="custom-scrollbar overflow-y-auto h-[calc(100%-67.5px)] px-5 sm:px-7 py-7 xs:py-10">
-
                         <div className={`flex flex-col gap-7 lg:gap-10 transition-opacity duration-700 ${showSlide ? "opacity-100" : "opacity-0"}`}>
 
                             {/* Map languages and framework badges */}
@@ -111,18 +108,10 @@ export default function ProjectSlider({ showSlide, toggleSlider, name, subtitle,
                                 <div className="font-semibold">Technical</div>
                                 <div className="leading-normal text-white/80 text-sm">{technical}</div>
                             </div>
-
-                            {/* Example images if applicable */}
-                            {/* <SliderImage exampleImages={exampleImages} /> */}
-
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
-
         </>
     );
 }
