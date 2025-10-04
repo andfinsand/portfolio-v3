@@ -152,6 +152,7 @@ body {
     background-size: 170%;
     background-position: 55% center;
     background-repeat: no-repeat;
+    animation: heroBgZoomIn 1.5s ease-out 0.1s forwards;
   }
 }
 
@@ -161,6 +162,7 @@ body {
     background-size: 170%;
     background-position: 55% center;
     background-repeat: no-repeat;
+    animation: foregroundFadeIn 0.3s ease-out 2.5s forwards;
   }
 }
 
