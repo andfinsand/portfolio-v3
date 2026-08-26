@@ -28,7 +28,7 @@ export const projectsData = [
         subtitle: "AI Gradient Generator",
         thumbnail: "/thumbnail-gradient-wizard.webp",
         demo: "/demo-gradient-wizard.mp4",
-        projectUrl: "gradient-wizard.up.railway.app",
+        projectUrl: "https://gradient-wizard.up.railway.app/",
         github: "https://github.com/andfinsand/gradient-wizard",
         description: "A web application that utilizes the OpenAI API and gpt-3.5-turbo model to create two or three-tone gradients based on user input. The generated gradients are accompanied by hex codes, a unique name, and a description for why the colors were chosen. Users can navigate between generated gradients and easily copy hex codes.",
         technical: "Gradient Wizard is built with React on the front end and Django on the back end. The user's input is sent through the OpenAI API to the GPT- 3.5 Turbo model in prompt format.The API response returns hex codes, a unique name, and description in JSON format that dynamically updates the front end.The history of gradients is managed within the React component's state, allowing users to easily switch between gradients. Logo design created with Midjourney and customized with Gimp.",
